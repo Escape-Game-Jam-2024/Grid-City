@@ -1,0 +1,108 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3ojvq7lxjsn2"]
+
+[ext_resource type="PackedScene" uid="uid://ti5oj1f382d2" path="res://scenes/LevelMenu/levelGrid.tscn" id="1_1je0k"]
+[ext_resource type="Script" path="res://scripts/LevelMenu/levelMenu.gd" id="1_uhq6v"]
+[ext_resource type="Texture2D" uid="uid://ccrxh5uf3qd4u" path="res://assets/gui/Star/Active.png" id="2_chu4m"]
+[ext_resource type="Texture2D" uid="uid://dishh5sqiw4qd" path="res://assets/gui/Buttons/Square/ArrowLeft-Bold/Default.png" id="3_vnp70"]
+[ext_resource type="FontFile" uid="uid://pf7m2v35pv56" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="3_wfbo7"]
+[ext_resource type="Texture2D" uid="uid://e85up2uhgo0x" path="res://assets/gui/Buttons/Square/ArrowLeft-Bold/Hover.png" id="4_ankan"]
+[ext_resource type="Texture2D" uid="uid://31sg6xcftaap" path="res://assets/gui/Buttons/Square/ArrowRight-Bold/Default.png" id="6_36jle"]
+[ext_resource type="Texture2D" uid="uid://cww8ao3ikl2xj" path="res://assets/gui/Buttons/Square/ArrowRight-Bold/Hover.png" id="7_avgic"]
+[ext_resource type="Texture2D" uid="uid://4qlkdjb20q06" path="res://assets/gui/Buttons/Square/Home/Default.png" id="8_djjr4"]
+[ext_resource type="Texture2D" uid="uid://bsn1yc7rqedkv" path="res://assets/gui/Buttons/Square/Home/Hover.png" id="9_xl0pe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ijpcp"]
+font = ExtResource("3_wfbo7")
+font_size = 48
+font_color = Color(0.854902, 0.862745, 0.72549, 1)
+
+[node name="LevelMenu" type="MarginContainer"]
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 1145.0
+offset_bottom = 633.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_uhq6v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="StarCounter" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Star" type="TextureRect" parent="VBoxContainer/StarCounter"]
+layout_mode = 2
+texture = ExtResource("2_chu4m")
+stretch_mode = 2
+
+[node name="Content" type="HBoxContainer" parent="VBoxContainer/StarCounter"]
+layout_mode = 2
+
+[node name="Stars" type="Label" parent="VBoxContainer/StarCounter/Content"]
+layout_mode = 2
+text = "4"
+label_settings = SubResource("LabelSettings_ijpcp")
+
+[node name="Slash" type="Label" parent="VBoxContainer/StarCounter/Content"]
+layout_mode = 2
+text = "/"
+label_settings = SubResource("LabelSettings_ijpcp")
+
+[node name="TotalStars" type="Label" parent="VBoxContainer/StarCounter/Content"]
+layout_mode = 2
+text = "45
+"
+label_settings = SubResource("LabelSettings_ijpcp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_vnp70")
+texture_hover = ExtResource("4_ankan")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="ClipControl" type="Control" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(574, 350)
+layout_mode = 2
+
+[node name="GridBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ClipControl"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelGrid" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox" instance=ExtResource("1_1je0k")]
+layout_mode = 2
+
+[node name="LevelGrid2" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox" instance=ExtResource("1_1je0k")]
+layout_mode = 2
+
+[node name="LevelGrid3" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox" instance=ExtResource("1_1je0k")]
+layout_mode = 2
+
+[node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_36jle")
+texture_hover = ExtResource("7_avgic")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="HomeButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_djjr4")
+texture_hover = ExtResource("9_xl0pe")
+stretch_mode = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HomeButton" to="." method="_on_BackButton_pressed"]
