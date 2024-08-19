@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://clsjlrtnife1o"]
+
+[ext_resource type="Texture2D" uid="uid://edlxlasu7nux" path="res://assets/GUI/Button/Rect/Default.png" id="1_m2ofd"]
+[ext_resource type="Texture2D" uid="uid://c0d3hrl5chlky" path="res://assets/GUI/Button/Rect/Hover.png" id="2_plj1d"]
+[ext_resource type="FontFile" uid="uid://bbxk528upy8os" path="res://assets/rubik/Rubik-Black.ttf" id="3_4gmc3"]
+[ext_resource type="Script" path="res://scripts/rect_button.gd" id="3_yl22n"]
+
+[node name="RectButton" type="TextureButton"]
+offset_right = 160.0
+offset_bottom = 85.0
+pivot_offset = Vector2(80, 42.5)
+texture_normal = ExtResource("1_m2ofd")
+texture_hover = ExtResource("2_plj1d")
+stretch_mode = 0
+script = ExtResource("3_yl22n")
+text = "Play"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -29.0
+offset_right = 45.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+clip_contents = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_4gmc3")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]Play"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
