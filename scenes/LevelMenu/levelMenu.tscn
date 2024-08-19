@@ -70,7 +70,7 @@ stretch_mode = 3
 
 [node name="ClipControl" type="Control" parent="VBoxContainer/HBoxContainer"]
 clip_contents = true
-custom_minimum_size = Vector2(574, 350)
+custom_minimum_size = Vector2(675, 420)
 layout_mode = 2
 
 [node name="GridBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ClipControl"]

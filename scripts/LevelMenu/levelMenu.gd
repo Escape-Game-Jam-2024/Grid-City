@@ -4,7 +4,7 @@ var num_grids = 1
 var total_stars = 1
 var current_grid = 1
 var width_of_levelBox = 87
-var grid_width = width_of_levelBox * 6 + (10*5)
+var grid_width = 675
 
 @onready var gridbox = $VBoxContainer/HBoxContainer/ClipControl/GridBox
 @onready var stars_label = $VBoxContainer/StarCounter/Content/Stars
