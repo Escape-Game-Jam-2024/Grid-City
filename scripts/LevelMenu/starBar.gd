@@ -1,7 +1,7 @@
 extends HBoxContainer
 
-var active_star = preload("res://assets/gui/Star/Active.png")
-var unactive_star = preload("res://assets/gui/Star/Unactive.png")
+var active_star = preload("res://assets/gui/Level/Star/Active.png")
+var unactive_star = preload("res://assets/gui/Level/Star/Unactive.png")
 
 func update_stars(value):
 	var num_stars = clamp(value, 0, 3)

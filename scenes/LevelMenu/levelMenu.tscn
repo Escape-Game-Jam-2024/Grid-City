@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ti5oj1f382d2" path="res://scenes/LevelMenu/levelGrid.tscn" id="1_1je0k"]
 [ext_resource type="Script" path="res://scripts/LevelMenu/levelMenu.gd" id="1_uhq6v"]
-[ext_resource type="Texture2D" uid="uid://ccrxh5uf3qd4u" path="res://assets/gui/Star/Active.png" id="2_chu4m"]
+[ext_resource type="Texture2D" uid="uid://5tblekd1u020" path="res://assets/gui/Level/Star/Active.png" id="2_4xpsp"]
 [ext_resource type="Texture2D" uid="uid://dishh5sqiw4qd" path="res://assets/gui/Buttons/Square/ArrowLeft-Bold/Default.png" id="3_vnp70"]
 [ext_resource type="FontFile" uid="uid://pf7m2v35pv56" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="3_wfbo7"]
 [ext_resource type="Texture2D" uid="uid://e85up2uhgo0x" path="res://assets/gui/Buttons/Square/ArrowLeft-Bold/Hover.png" id="4_ankan"]
@@ -36,8 +36,7 @@ layout_mode = 2
 
 [node name="Star" type="TextureRect" parent="VBoxContainer/StarCounter"]
 layout_mode = 2
-texture = ExtResource("2_chu4m")
-stretch_mode = 2
+texture = ExtResource("2_4xpsp")
 
 [node name="Content" type="HBoxContainer" parent="VBoxContainer/StarCounter"]
 layout_mode = 2
@@ -105,4 +104,3 @@ stretch_mode = 3
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_NextButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/HomeButton" to="." method="_on_BackButton_pressed"]

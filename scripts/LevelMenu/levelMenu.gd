@@ -10,7 +10,7 @@ var grid_width = width_of_levelBox * 6 + (10*5)
 @onready var stars_label = $VBoxContainer/StarCounter/Content/Stars
 @onready var total_stars_label = $VBoxContainer/StarCounter/Content/TotalStars
 
-var level_stars = [0,2,1,3,3]
+var level_stars = [3,2,1,2,1,0]
 func _ready():
 	# Number all the level boxes
 	num_grids = gridbox.get_child_count()

@@ -1,5 +1,5 @@
 @tool
-extends TextureRect
+extends TextureButton
 
 signal level_selected
 
@@ -10,8 +10,8 @@ signal level_selected
 @export var stars = 1:
 	set = set_stars
 
-@onready var label = $VBoxContainer/Label
-@onready var starBar = $VBoxContainer/StarBar
+@onready var label = $Label
+@onready var starBar = $StarBar
 
 var unlocked_level = preload("res://assets/gui/Level/Button/Dummy.png")
 var locked_level = preload("res://assets/gui/Level/Button/Locked.png")
@@ -21,11 +21,11 @@ func set_locked(value):
 	if not is_inside_tree():
 		await ready
 	if(locked):
-		self.texture = locked_level
+		self.disabled = true
 		label.visible = false
 		starBar.visible = false
 	else:
-		self.texture = unlocked_level
+		self.disabled = false
 		label.visible = true
 		starBar.visible = true
 

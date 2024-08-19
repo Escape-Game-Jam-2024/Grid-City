@@ -6,6 +6,10 @@
 [sub_resource type="Theme" id="Theme_fbtx4"]
 
 [node name="starBar" type="HBoxContainer"]
+offset_left = 178.0
+offset_top = 112.0
+offset_right = 281.0
+offset_bottom = 142.0
 theme_override_constants/separation = 5
 script = ExtResource("1_mumun")
 

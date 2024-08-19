@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ti5oj1f382d2"]
 
-[ext_resource type="PackedScene" uid="uid://bishkhguvrqql" path="res://scenes/LevelMenu/levelBox.tscn" id="1_wmk7q"]
+[ext_resource type="PackedScene" uid="uid://coy3qum8136og" path="res://scenes/LevelMenu/levelBox.tscn" id="1_wmk7q"]
 
 [node name="LevelGrid" type="GridContainer"]
 theme_override_constants/h_separation = 10
@@ -12,51 +12,68 @@ layout_mode = 2
 
 [node name="LevelBox2" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox3" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox4" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox5" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox6" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox7" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox8" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox9" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox10" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox11" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox12" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox13" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox14" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox15" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox16" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox17" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
 
 [node name="LevelBox18" parent="." instance=ExtResource("1_wmk7q")]
 layout_mode = 2
+disabled = true
