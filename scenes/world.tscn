@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxxb4t8tct4tt"]
 
-[ext_resource type="Texture2D" uid="uid://bx6gmvw7q21cb" path="res://assets/Isometric Suburban Pack/Grounds/grassy ground.png" id="1_23tq6"]
-[ext_resource type="Texture2D" uid="uid://cdc5hibv7k84u" path="res://assets/Isometric Suburban Pack/Artboard1.png" id="2_txpqo"]
+[ext_resource type="Texture2D" uid="uid://bc6jwg5qs1p1j" path="res://assets/Isometric Suburban Pack/Grounds/grassy ground.png" id="1_23tq6"]
+[ext_resource type="Texture2D" uid="uid://cdub8etlu4frs" path="res://assets/Isometric Suburban Pack/Artboard1.png" id="2_txpqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhicc"]
 texture = ExtResource("1_23tq6")
