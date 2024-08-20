@@ -13,7 +13,6 @@ func _ready():
 	volume_button.pressed.connect(toggle_volume)
 
 func load_loading_scene():
-	# await get_tree().current_scene.tree_exited
 	get_tree().root.add_child(loading_scene)
 
 func toggle_volume():
