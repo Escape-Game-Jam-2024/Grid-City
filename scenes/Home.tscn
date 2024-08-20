@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv4hv72psbjw0"]
+
+[ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_4mw74"]
+[ext_resource type="FontFile" uid="uid://dk4ph3bjgo8ek" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
+[ext_resource type="PackedScene" path="res://scenes/rect_button.tscn" id="3_tx5re"]
+[ext_resource type="PackedScene" path="res://scenes/square_button.tscn" id="4_l0k85"]
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196, 0.18, 0.184, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -291.0
+offset_right = 530.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+script = ExtResource("1_4mw74")
+
+[node name="Top" type="VBoxContainer" parent="VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Top"]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+
+[node name="Title" type="RichTextLabel" parent="VBoxContainer/Top/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_faq7t")
+theme_override_font_sizes/normal_font_size = 170
+bbcode_enabled = true
+text = "[center]Grid City"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Top"]
+layout_mode = 2
+
+[node name="PlayButton" parent="VBoxContainer/Top/CenterContainer" instance=ExtResource("3_tx5re")]
+layout_mode = 2
+
+[node name="Bottom" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 900
+alignment = 1
+
+[node name="VolumeButton" parent="VBoxContainer/Bottom" instance=ExtResource("4_l0k85")]
+layout_mode = 2
+texture_file = "res://assets/GUI/Button/Icon/SoundOn.png"
+
+[node name="LevelSelectorButton" parent="VBoxContainer/Bottom" instance=ExtResource("4_l0k85")]
+layout_mode = 2
+texture_file = "res://assets/GUI/Button/Icon/Levels.png"

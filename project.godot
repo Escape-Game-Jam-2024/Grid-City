@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="Grid City"
-run/main_scene="res://scenes/LevelMenu/LevelScreen.tscn"
+run/main_scene="res://scenes/home.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="Grid City"
 
 [rendering]
 
