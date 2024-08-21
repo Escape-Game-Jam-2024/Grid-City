@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://07hw1rhrbnxq"]
+[gd_scene load_steps=6 format=3 uid="uid://07hw1rhrbnxq"]
 
 [ext_resource type="Script" path="res://scripts/loading.gd" id="1_oxtec"]
-[ext_resource type="FontFile" uid="uid://bbxk528upy8os" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_kuq61"]
-[ext_resource type="Texture2D" uid="uid://l7f8v66c0vxy" path="res://assets/gui/Load/Magazine/Top.png" id="3_sey3u"]
-[ext_resource type="Texture2D" uid="uid://ceqiv7i0k41dn" path="res://assets/gui/Load/ProgressBar_fill.png" id="4_4djwi"]
+[ext_resource type="FontFile" uid="uid://i751g7xmnhrf" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_kuq61"]
+[ext_resource type="Texture2D" uid="uid://cgbjqbmtlo7rn" path="res://assets/gui/Load/Magazine/Top.png" id="3_sey3u"]
+[ext_resource type="Texture2D" uid="uid://5jftjwb4mope" path="res://assets/gui/Load/ProgressBar_fill.png" id="4_4djwi"]
+[ext_resource type="AudioStream" uid="uid://5ton6sp3agni" path="res://sound/effects/loading_sound.wav" id="5_jbys0"]
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 15
@@ -49,5 +50,9 @@ texture_progress_offset = Vector2(20, 11)
 [node name="Timer" type="Timer" parent="VBoxContainer"]
 wait_time = 0.05
 autostart = true
+
+[node name="LoadingSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
+stream = ExtResource("5_jbys0")
+autoplay = true
 
 [connection signal="timeout" from="VBoxContainer/Timer" to="VBoxContainer" method="_on_timer_timeout"]
