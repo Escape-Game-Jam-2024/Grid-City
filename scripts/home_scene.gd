@@ -4,6 +4,7 @@ extends VBoxContainer
 @onready var level_selector_button: TextureButton = $Bottom/LevelSelectorButton
 @onready var volume_button: TextureButton = $Bottom/VolumeButton
 @onready var home_sound = $HomeScreenSound
+@onready var menu_select_sound = $MenuSelectSound
 
 const SOUND_ON = 'res://assets/gui/Button/Icon/SoundOn.png'
 const SOUND_OFF = 'res://assets/gui/Button/Icon/SoundOff.png'
@@ -18,10 +19,12 @@ func _ready():
 	level_selector_button.pressed.connect(load_level_selector_scene)
 
 func load_level_selector_scene():
+	menu_select_sound.play()
 	get_tree().current_scene.queue_free()
 	get_tree().root.add_child(level_selector_scene)
 	
 func load_loading_scene():
+	menu_select_sound.play()
 	get_tree().current_scene.queue_free()
 	get_tree().root.add_child(loading_scene)
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vxdhu5xg8yjb"]
 
-[ext_resource type="Texture2D" uid="uid://ll6gbdqlm6go" path="res://assets/example_background.jpg" id="1_43h2d"]
+[ext_resource type="Texture2D" uid="uid://c0ije512sftyw" path="res://assets/example_background.jpg" id="1_43h2d"]
 
 [node name="ExampleEntryScene" type="TextureRect"]
 anchors_preset = 15

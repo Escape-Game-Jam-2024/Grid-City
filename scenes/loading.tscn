@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/loading.gd" id="1_oxtec"]
 [ext_resource type="FontFile" uid="uid://i751g7xmnhrf" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_kuq61"]
-[ext_resource type="Texture2D" uid="uid://cgbjqbmtlo7rn" path="res://assets/gui/Load/Magazine/Top.png" id="3_sey3u"]
-[ext_resource type="Texture2D" uid="uid://5jftjwb4mope" path="res://assets/gui/Load/ProgressBar_fill.png" id="4_4djwi"]
-[ext_resource type="AudioStream" uid="uid://5ton6sp3agni" path="res://sound/effects/loading_sound.wav" id="5_jbys0"]
+[ext_resource type="Texture2D" uid="uid://cgbjqbmtlo7rn" path="res://assets/GUI/Load/Magazine/Top.png" id="3_sey3u"]
+[ext_resource type="Texture2D" uid="uid://5jftjwb4mope" path="res://assets/GUI/Load/ProgressBar_fill.png" id="4_4djwi"]
+[ext_resource type="AudioStream" uid="uid://5ton6sp3agni" path="res://assets/audio/effects/loading_sound.wav" id="5_jbys0"]
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 15

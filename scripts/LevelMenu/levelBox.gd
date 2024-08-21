@@ -12,6 +12,7 @@ signal level_selected
 
 @onready var label = $Label
 @onready var starBar = $StarBar
+@onready var stage_select_sound = $StageSelectSound
 
 var unlocked_level = preload("res://assets/gui/Level/Button/Dummy.png")
 var locked_level = preload("res://assets/gui/Level/Button/Locked.png")
@@ -41,6 +42,7 @@ func _on_gui_input(event):
 		return
 	if event is InputEventMouseButton and event.pressed:
 		level_selected.emit(level_num)
+		stage_select_sound.play()
 		print("Clicked level ", level_num)
 
 func set_stars(value):

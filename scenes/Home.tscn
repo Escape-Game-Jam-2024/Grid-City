@@ -4,9 +4,9 @@
 [ext_resource type="FontFile" uid="uid://dtkfdttnvcyj8" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
 [ext_resource type="PackedScene" uid="uid://clsjlrtnife1o" path="res://scenes/rect_button.tscn" id="3_tx5re"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="4_l0k85"]
-[ext_resource type="AudioStream" uid="uid://cl5ieyk0r1wvf" path="res://sound/background/grid_homesound.wav" id="5_tqveq"]
-[ext_resource type="AudioStream" uid="uid://qpcd6qn7i0aq" path="res://sound/background/grid_endgame.wav" id="6_0q6wh"]
-[ext_resource type="AudioStream" uid="uid://dsvgqi7sqe27j" path="res://sound/background/grid_gameplay.wav" id="7_gdh2l"]
+[ext_resource type="AudioStream" uid="uid://bjw33cdsvjwur" path="res://assets/audio/background/home_screen_sound.mp3" id="5_8f5bc"]
+[ext_resource type="AudioStream" uid="uid://dsvgqi7sqe27j" path="res://assets/audio/background/grid_gameplay.wav" id="7_gdh2l"]
+[ext_resource type="AudioStream" uid="uid://b4l0drgp1gkt6" path="res://assets/audio/effects/vs-button-click-03.mp3" id="7_jpvbo"]
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 15
@@ -75,12 +75,12 @@ texture_file = "res://assets/GUI/Button/Icon/Levels.png"
 
 [node name="HomeScreenSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
 position = Vector2(-110, -69)
-stream = ExtResource("5_tqveq")
+stream = ExtResource("5_8f5bc")
 
 [node name="GamePlaySound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
 position = Vector2(-110, -69)
 stream = ExtResource("7_gdh2l")
 
-[node name="EndGameSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
+[node name="MenuSelectSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
 position = Vector2(-110, -69)
-stream = ExtResource("6_0q6wh")
+stream = ExtResource("7_jpvbo")

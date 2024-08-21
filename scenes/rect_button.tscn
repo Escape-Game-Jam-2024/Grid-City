@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://clsjlrtnife1o"]
+[gd_scene load_steps=6 format=3 uid="uid://clsjlrtnife1o"]
 
-[ext_resource type="Texture2D" uid="uid://edlxlasu7nux" path="res://assets/gui/Button/Rect/Default.png" id="1_m2ofd"]
-[ext_resource type="Texture2D" uid="uid://c0d3hrl5chlky" path="res://assets/gui/Button/Rect/Hover.png" id="2_plj1d"]
-[ext_resource type="FontFile" uid="uid://bbxk528upy8os" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_4gmc3"]
+[ext_resource type="Texture2D" uid="uid://blfxoynkp8wll" path="res://assets/GUI/Button/Rect/Default.png" id="1_m2ofd"]
+[ext_resource type="Texture2D" uid="uid://d0n5nbokg0yv8" path="res://assets/GUI/Button/Rect/Hover.png" id="2_plj1d"]
+[ext_resource type="FontFile" uid="uid://i751g7xmnhrf" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_4gmc3"]
 [ext_resource type="Script" path="res://scripts/rect_button.gd" id="3_yl22n"]
+[ext_resource type="AudioStream" uid="uid://b4l0drgp1gkt6" path="res://assets/audio/effects/vs-button-click-03.mp3" id="5_cfxd0"]
 
 [node name="RectButton" type="TextureButton"]
 offset_right = 160.0
@@ -40,3 +41,6 @@ text = "[center]Play"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[node name="SelectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cfxd0")
