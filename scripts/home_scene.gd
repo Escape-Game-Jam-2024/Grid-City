@@ -8,7 +8,7 @@ const SOUND_ON = 'res://assets/gui/Button/Icon/SoundOn.png'
 const SOUND_OFF = 'res://assets/gui/Button/Icon/SoundOff.png'
 
 var loading_scene = preload("res://scenes/loading.tscn").instantiate()
-var level_selector_scene = preload("res://scenes/LevelMenu/LevelScreen.tscn").instantiate()
+var level_selector_scene = preload("res://scenes/LevelMenu/LevelSelector.tscn").instantiate()
 
 func _ready():
 	play_button.pressed.connect(load_loading_scene)

@@ -1,17 +1,20 @@
-extends MarginContainer
+extends ColorRect
 
+@onready var gridbox = $VBoxContainer/Top/CenterContainer/ClipControl/GridBox
+@onready var stars_label = $VBoxContainer/Top/MarginContainer/StarCounter/Content/Stars
+@onready var total_stars_label = $VBoxContainer/Top/MarginContainer/StarCounter/Content/TotalStars
+@onready var home_button = $VBoxContainer/Bottom/HomeButton
+
+var home_scene = preload("res://scenes/Home.tscn").instantiate()
 var num_grids = 1
 var total_stars = 1
 var current_grid = 1
-var width_of_levelBox = 87
-var grid_width = 675
-
-@onready var gridbox = $VBoxContainer/HBoxContainer/ClipControl/GridBox
-@onready var stars_label = $VBoxContainer/StarCounter/Content/Stars
-@onready var total_stars_label = $VBoxContainer/StarCounter/Content/TotalStars
-
+var grid_width = 1
 var level_stars = [3,2,1,2,1,0]
+
 func _ready():
+	grid_width = gridbox.get_child(0).get_size().x
+	home_button.pressed.connect(load_home_scene)
 	# Number all the level boxes
 	num_grids = gridbox.get_child_count()
 	total_stars = (num_grids * 18 ) * 3
@@ -28,7 +31,7 @@ func _ready():
 				box.locked = false
 				box.stars = level_stars[num-1]
 
-func _on_BackButton_pressed():
+func _on_PrevButton_pressed():
 	if current_grid > 1:
 		current_grid -= 1
 		var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
@@ -45,3 +48,7 @@ func get_stars():
 	for star in level_stars:
 		total_stars += star
 	return total_stars
+
+func load_home_scene():
+	get_tree().current_scene.queue_free()
+	get_tree().root.add_child(home_scene)
