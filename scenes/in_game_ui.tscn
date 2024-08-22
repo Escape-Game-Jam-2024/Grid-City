@@ -32,4 +32,3 @@ texture_file = "res://assets/GUI/Button/Icon/Pause.png"
 
 [node name="PauseScene" parent="." instance=ExtResource("3_gqwsv")]
 process_mode = 2
-visible = false

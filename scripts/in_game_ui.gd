@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var pause_button: TextureButton = $UI/HBoxContainer/PauseButton
 @onready var pause_scene: Control = $PauseScene
 
-var level_scene = preload("res://scenes/levelMenu.tscn")
+const LEVEL_SCENE = "res://scenes/LevelMenu/LevelSelector.tscn"
 
 func _ready():
 	pause_button.clicked.connect(pause)
@@ -23,4 +23,4 @@ func unpause():
 	pause_scene.hide()
 
 func change_to_level_scene():
-	get_tree().change_scene_to_packed(level_scene)
+	SceneLoader.load_scene(LEVEL_SCENE, false)
