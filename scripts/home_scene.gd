@@ -9,7 +9,7 @@ const SOUND_OFF = 'res://assets/gui/Button/Icon/SoundOff.png'
 const GAME_SCENE = 'res://scenes/example_game_scene.tscn'
 
 var loading_scene: PackedScene = preload("res://scenes/loading.tscn")
-var level_selector_scene: PackedScene = preload("res://scenes/LevelMenu/LevelScreen.tscn")
+var level_selector_scene: PackedScene = preload("res://scenes/LevelMenu/LevelSelector.tscn")
 
 func _ready():
 	play_button.pressed.connect(load_main_scene)
