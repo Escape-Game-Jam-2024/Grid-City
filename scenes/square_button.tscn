@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scripts/square_button.gd" id="3_0gq5d"]
 [ext_resource type="Texture2D" uid="uid://dfch3y42ct6ne" path="res://assets/GUI/Button/Icon/SoundOff.png" id="4_mv53w"]
 [ext_resource type="AudioStream" uid="uid://b4l0drgp1gkt6" path="res://assets/audio/effects/vs-button-click-03.mp3" id="5_eayp8"]
+[ext_resource type="Texture2D" uid="uid://4obkceqqrm7g" path="res://assets/gui/Button/Icon/SoundOff.png" id="4_mv53w"]
 
 [node name="SquareButton" type="TextureButton"]
 offset_right = 80.0
@@ -13,7 +14,7 @@ pivot_offset = Vector2(40, 41.5)
 texture_normal = ExtResource("1_4wm5h")
 texture_hover = ExtResource("2_1jwos")
 script = ExtResource("3_0gq5d")
-texture_file = "res://assets/GUI/Button/Icon/SoundOff.png"
+texture_file = "res://assets/gui/Button/Icon/SoundOff.png"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
