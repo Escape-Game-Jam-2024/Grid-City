@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv4hv72psbjw0"]
 
 [ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_4mw74"]
-[ext_resource type="FontFile" uid="uid://dk4ph3bjgo8ek" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
-[ext_resource type="PackedScene" path="res://scenes/rect_button.tscn" id="3_tx5re"]
-[ext_resource type="PackedScene" path="res://scenes/square_button.tscn" id="4_l0k85"]
+[ext_resource type="FontFile" uid="uid://dwljn4tok0ixl" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
+[ext_resource type="PackedScene" uid="uid://clsjlrtnife1o" path="res://scenes/rect_button.tscn" id="3_tx5re"]
+[ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="4_l0k85"]
 
-[node name="ColorRect" type="ColorRect"]
+[node name="Background" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,6 +28,8 @@ offset_right = 530.0
 offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+pivot_offset = Vector2(530, 291)
 theme_override_constants/separation = 100
 alignment = 1
 script = ExtResource("1_4mw74")

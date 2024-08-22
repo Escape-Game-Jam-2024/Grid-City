@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://fct3w40be0vo"]
 
 [ext_resource type="Script" path="res://scripts/LevelMenu/levelSelector.gd" id="1_qng0c"]
-[ext_resource type="Script" path="res://scripts/home_scene.gd" id="2_k0kh7"]
-[ext_resource type="Texture2D" uid="uid://5tblekd1u020" path="res://assets/gui/Level/Star/Active.png" id="3_2ftkj"]
-[ext_resource type="FontFile" uid="uid://pf7m2v35pv56" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="4_8f4na"]
+[ext_resource type="Script" path="res://scripts/LevelMenu/level_selector_nav.gd" id="2_mpynw"]
+[ext_resource type="Texture2D" uid="uid://dijy4nbq70v4k" path="res://assets/gui/Level/Star/Active.png" id="3_2ftkj"]
+[ext_resource type="FontFile" uid="uid://bf1eei2ubjuua" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="4_8f4na"]
 [ext_resource type="PackedScene" uid="uid://ti5oj1f382d2" path="res://scenes/LevelMenu/levelGrid.tscn" id="5_vxtc4"]
-[ext_resource type="PackedScene" path="res://scenes/square_button.tscn" id="6_1hbhd"]
+[ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="6_1hbhd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i0e4i"]
 font = ExtResource("4_8f4na")
@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
-script = ExtResource("2_k0kh7")
+script = ExtResource("2_mpynw")
 
 [node name="Top" type="VBoxContainer" parent="VBoxContainer"]
 layout_direction = 2
@@ -107,7 +107,7 @@ alignment = 1
 
 [node name="VolumeButton" parent="VBoxContainer/Bottom" instance=ExtResource("6_1hbhd")]
 layout_mode = 2
-texture_file = "res://assets/GUI/Button/Icon/SoundOn.png"
+texture_file = "res://assets/gui/Button/Icon/SoundOn.png"
 
 [node name="NavButtons" type="HBoxContainer" parent="VBoxContainer/Bottom"]
 layout_mode = 2
@@ -123,7 +123,7 @@ texture_file = "res://assets/GUI/Button/Icon/ArrowRight-Bold.png"
 
 [node name="HomeButton" parent="VBoxContainer/Bottom" instance=ExtResource("6_1hbhd")]
 layout_mode = 2
-texture_file = "res://assets/GUI/Button/Icon/Home.png"
+texture_file = "res://assets/gui/Button/Icon/Home.png"
 
 [connection signal="pressed" from="VBoxContainer/Bottom/NavButtons/PrevButton" to="." method="_on_PrevButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Bottom/NavButtons/NextButton" to="." method="_on_NextButton_pressed"]

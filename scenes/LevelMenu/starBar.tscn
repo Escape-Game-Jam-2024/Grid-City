@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbemddlera173"]
 
 [ext_resource type="Script" path="res://scripts/LevelMenu/starBar.gd" id="1_mumun"]
-[ext_resource type="Texture2D" uid="uid://5tblekd1u020" path="res://assets/gui/Level/Star/Active.png" id="2_pawqn"]
+[ext_resource type="Texture2D" uid="uid://dijy4nbq70v4k" path="res://assets/gui/Level/Star/Active.png" id="2_pawqn"]
 
 [sub_resource type="Theme" id="Theme_fbtx4"]
 
