@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bpfj8cvoworty" path="res://assets/gui/Button/Square/Default.png" id="1_4wm5h"]
 [ext_resource type="Texture2D" uid="uid://o2tbs04pxqcb" path="res://assets/gui/Button/Square/Hover.png" id="2_1jwos"]
 [ext_resource type="Script" path="res://scripts/square_button.gd" id="3_0gq5d"]
-[ext_resource type="Texture2D" uid="uid://4obkceqqrm7g" path="res://assets/GUI/Button/Icon/SoundOff.png" id="4_mv53w"]
+[ext_resource type="Texture2D" uid="uid://4obkceqqrm7g" path="res://assets/gui/Button/Icon/SoundOff.png" id="4_mv53w"]
 
 [node name="SquareButton" type="TextureButton"]
 offset_right = 80.0
@@ -12,7 +12,7 @@ pivot_offset = Vector2(40, 41.5)
 texture_normal = ExtResource("1_4wm5h")
 texture_hover = ExtResource("2_1jwos")
 script = ExtResource("3_0gq5d")
-texture_file = "res://assets/GUI/Button/Icon/SoundOff.png"
+texture_file = "res://assets/gui/Button/Icon/SoundOff.png"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnq5qrppog3ap"]
 
-[ext_resource type="PackedScene" uid="uid://c3ojvq7lxjsn2" path="res://scenes/LevelMenu/levelMenu.tscn" id="1_8xj36"]
+[ext_resource type="PackedScene" uid="uid://c3ojvq7lxjsn2" path="res://scenes/levelMenu.tscn" id="1_8xj36"]
 
 [node name="LevelScreen" type="Control"]
 layout_mode = 3

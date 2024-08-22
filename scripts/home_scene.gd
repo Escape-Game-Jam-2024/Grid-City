@@ -6,22 +6,23 @@ extends VBoxContainer
 
 const SOUND_ON = 'res://assets/gui/Button/Icon/SoundOn.png'
 const SOUND_OFF = 'res://assets/gui/Button/Icon/SoundOff.png'
+const GAME_SCENE = 'res://scenes/example_game_scene.tscn'
 
-var loading_scene = preload("res://scenes/loading.tscn").instantiate()
-var level_selector_scene = preload("res://scenes/LevelMenu/LevelScreen.tscn").instantiate()
+var loading_scene: PackedScene = preload("res://scenes/loading.tscn")
+var level_selector_scene: PackedScene = preload("res://scenes/LevelMenu/LevelScreen.tscn")
 
 func _ready():
-	play_button.pressed.connect(load_loading_scene)
+	play_button.pressed.connect(load_main_scene)
 	volume_button.pressed.connect(toggle_volume)
 	level_selector_button.pressed.connect(load_level_selector_scene)
 
+	volume_button.texture_file = SOUND_ON
+
 func load_level_selector_scene():
-	get_tree().current_scene.queue_free()
-	get_tree().root.add_child(level_selector_scene)
+	get_tree().change_scene_to_packed(level_selector_scene)
 	
-func load_loading_scene():
-	get_tree().current_scene.queue_free()
-	get_tree().root.add_child(loading_scene)
+func load_main_scene():
+	SceneLoader.load_scene(GAME_SCENE)
 
 func toggle_volume():
 	if (volume_button.texture_file == SOUND_ON):
