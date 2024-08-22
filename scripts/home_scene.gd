@@ -14,6 +14,7 @@ var LOADING_SCENE = "res://scenes/loading.tscn"
 var LEVEL_SELECTOR_SCENE = "res://scenes/LevelMenu/levelSelector.tscn"
 
 func _ready():
+	home_sound.play()
 	play_button.clicked.connect(load_main_scene)
 	volume_button.clicked.connect(toggle_volume)
 	level_selector_button.pressed.connect(load_level_selector_scene)
@@ -24,6 +25,7 @@ func load_level_selector_scene():
 	SceneLoader.load_scene(LEVEL_SELECTOR_SCENE, false)
 	
 func load_main_scene():
+	menu_select_sound.play()
 	SceneLoader.load_scene(GAME_SCENE)
 
 func toggle_volume():
