@@ -1,11 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://depfpq0tvvqs1"]
+[gd_scene load_steps=3 format=3 uid="uid://depfpq0tvvqs1"]
 
 [ext_resource type="PackedScene" uid="uid://biebd6rq0xdie" path="res://scenes/tileMap.tscn" id="1_r0xmb"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="1_yuucm"]
 
 [node name="world" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(574, 322)
-metadata/_edit_lock_ = true
+anchor_mode = 0
+script = ExtResource("1_yuucm")
 
 [node name="TileMap" parent="." instance=ExtResource("1_r0xmb")]
