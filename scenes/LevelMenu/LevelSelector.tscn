@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/LevelMenu/levelSelector.gd" id="1_qng0c"]
 [ext_resource type="Script" path="res://scripts/LevelMenu/level_selector_nav.gd" id="2_mpynw"]
-[ext_resource type="Texture2D" uid="uid://dijy4nbq70v4k" path="res://assets/gui/Level/Star/Active.png" id="3_2ftkj"]
-[ext_resource type="FontFile" uid="uid://bf1eei2ubjuua" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="4_8f4na"]
+[ext_resource type="Texture2D" uid="uid://5tblekd1u020" path="res://assets/gui/Level/Star/Active.png" id="3_2ftkj"]
+[ext_resource type="FontFile" uid="uid://pf7m2v35pv56" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="4_8f4na"]
 [ext_resource type="PackedScene" uid="uid://ti5oj1f382d2" path="res://scenes/LevelMenu/levelGrid.tscn" id="5_vxtc4"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="6_1hbhd"]
 

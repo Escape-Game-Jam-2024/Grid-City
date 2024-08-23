@@ -14,12 +14,11 @@ enum Layers {
 var city_layout: Array
 
 func _ready():
-	
+	GameManager.tilemap = self;
 	city_layout = fill_grid_with_zeros()
 	
 	generate_city_layout() 
 	build_city()
-	print(city_layout)
 
 func build_city():
 	
@@ -154,3 +153,5 @@ func fill_grid_with_zeros():
 	
 	return grid
 
+func place_object(obj):
+	$Node2D.add_child(obj)
