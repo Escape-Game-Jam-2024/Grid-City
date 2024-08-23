@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbemddlera173"]
+
+[ext_resource type="Script" path="res://scripts/LevelMenu/starBar.gd" id="1_mumun"]
+[ext_resource type="Texture2D" uid="uid://dijy4nbq70v4k" path="res://assets/gui/Level/Star/Active.png" id="2_pawqn"]
+
+[sub_resource type="Theme" id="Theme_fbtx4"]
+
+[node name="starBar" type="HBoxContainer"]
+offset_left = 178.0
+offset_top = 112.0
+offset_right = 281.0
+offset_bottom = 142.0
+theme_override_constants/separation = 5
+script = ExtResource("1_mumun")
+
+[node name="1" type="TextureRect" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_fbtx4")
+texture = ExtResource("2_pawqn")
+stretch_mode = 2
+
+[node name="2" type="TextureRect" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_fbtx4")
+texture = ExtResource("2_pawqn")
+stretch_mode = 2
+
+[node name="3" type="TextureRect" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_fbtx4")
+texture = ExtResource("2_pawqn")
+stretch_mode = 2

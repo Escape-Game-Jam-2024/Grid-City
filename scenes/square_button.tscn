@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bheakgcv4xagd"]
+
+[ext_resource type="Texture2D" uid="uid://bpfj8cvoworty" path="res://assets/gui/Button/Square/Default.png" id="1_4wm5h"]
+[ext_resource type="Texture2D" uid="uid://o2tbs04pxqcb" path="res://assets/gui/Button/Square/Hover.png" id="2_1jwos"]
+[ext_resource type="Script" path="res://scripts/square_button.gd" id="3_0gq5d"]
+[ext_resource type="Texture2D" uid="uid://4obkceqqrm7g" path="res://assets/gui/Button/Icon/SoundOff.png" id="4_mv53w"]
+
+[node name="SquareButton" type="TextureButton"]
+offset_right = 80.0
+offset_bottom = 83.0
+pivot_offset = Vector2(40, 41.5)
+texture_normal = ExtResource("1_4wm5h")
+texture_hover = ExtResource("2_1jwos")
+script = ExtResource("3_0gq5d")
+texture_file = "res://assets/gui/Button/Icon/SoundOff.png"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -33.5
+offset_right = 35.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_mv53w")
+stretch_mode = 3

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://coy3qum8136og"]
+
+[ext_resource type="Script" path="res://scripts/LevelMenu/levelBox.gd" id="1_ep3dg"]
+[ext_resource type="FontFile" uid="uid://bbxk528upy8os" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_87oco"]
+[ext_resource type="Texture2D" uid="uid://df8df5t03rx6p" path="res://assets/gui/Level/Button/Locked.png" id="2_e11qe"]
+[ext_resource type="Texture2D" uid="uid://c6lwxwdu2w3s5" path="res://assets/gui/Level/Button/Dummy.png" id="2_vxbwv"]
+[ext_resource type="PackedScene" uid="uid://bbemddlera173" path="res://scenes/LevelMenu/starBar.tscn" id="4_umw1c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2esnd"]
+font = ExtResource("2_87oco")
+font_size = 56
+font_color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[node name="LevelBox" type="TextureButton"]
+texture_normal = ExtResource("2_vxbwv")
+texture_disabled = ExtResource("2_e11qe")
+script = ExtResource("1_ep3dg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 25.0
+offset_top = 39.0
+offset_right = -25.0
+offset_bottom = 106.0
+grow_horizontal = 2
+text = "1"
+label_settings = SubResource("LabelSettings_2esnd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StarBar" parent="." instance=ExtResource("4_umw1c")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -35.0
+offset_right = -18.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
