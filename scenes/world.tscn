@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxxb4t8tct4tt"]
+[gd_scene load_steps=3 format=3 uid="uid://depfpq0tvvqs1"]
 
-[ext_resource type="Texture2D" uid="uid://bc6jwg5qs1p1j" path="res://assets/Isometric Suburban Pack/Grounds/grassy ground.png" id="1_23tq6"]
-[ext_resource type="Texture2D" uid="uid://cdub8etlu4frs" path="res://assets/Isometric Suburban Pack/Artboard1.png" id="2_txpqo"]
+[ext_resource type="Texture2D" uid="uid://bx6gmvw7q21cb" path="res://assets/Isometric Suburban Pack/Grounds/grassy ground.png" id="1_23tq6"]
+[ext_resource type="Texture2D" uid="uid://cdc5hibv7k84u" path="res://assets/Isometric Suburban Pack/Artboard1.png" id="2_txpqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhicc"]
 texture = ExtResource("1_23tq6")
@@ -22168,9 +22168,7 @@ sources/1 = SubResource("TileSetAtlasSource_qj7sj")
 [node name="world" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, -5)
+anchor_mode = 0
+script = ExtResource("1_yuucm")
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_sf31i")
-rendering_quadrant_size = 32
-format = 2
+[node name="TileMap" parent="." instance=ExtResource("1_r0xmb")]
