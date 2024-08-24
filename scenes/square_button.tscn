@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bheakgcv4xagd"]
 
-[ext_resource type="Texture2D" uid="uid://cn5lo276grcwt" path="res://assets/gui/Button/Square/Default.png" id="1_4wm5h"]
-[ext_resource type="Texture2D" uid="uid://b1rsvj0r5v0yw" path="res://assets/gui/Button/Square/Hover.png" id="2_1jwos"]
+[ext_resource type="Texture2D" uid="uid://cn5lo276grcwt" path="res://assets/GUI/Button/Square/Default.png" id="1_4wm5h"]
+[ext_resource type="Texture2D" uid="uid://b1rsvj0r5v0yw" path="res://assets/GUI/Button/Square/Hover.png" id="2_1jwos"]
 [ext_resource type="Script" path="res://scripts/square_button.gd" id="3_0gq5d"]
-[ext_resource type="Texture2D" uid="uid://dyqws5d2g713d" path="res://assets/gui/Button/Icon/SoundOff.png" id="4_mv53w"]
+[ext_resource type="Texture2D" uid="uid://dyqws5d2g713d" path="res://assets/GUI/Button/Icon/SoundOff.png" id="4_mv53w"]
 
 [node name="SquareButton" type="TextureButton"]
 offset_right = 80.0

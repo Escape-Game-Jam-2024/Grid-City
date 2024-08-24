@@ -125,8 +125,8 @@ alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Bottom"]
 layout_mode = 2
-theme_override_constants/margin_right = 70
-theme_override_constants/margin_bottom = 70
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 50
 
 [node name="LevelSelectorButton" parent="Bottom/MarginContainer" instance=ExtResource("2_vkbkx")]
 layout_mode = 2

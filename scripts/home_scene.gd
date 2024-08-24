@@ -6,7 +6,7 @@ extends VBoxContainer
 
 const SOUND_ON = 'res://assets/gui/Button/Icon/SoundOn.png'
 const SOUND_OFF = 'res://assets/gui/Button/Icon/SoundOff.png'
-const GAME_SCENE = 'res://scenes/example_game_scene.tscn'
+const GAME_SCENE = 'res://scenes/game_scene.tscn'
 
 var LOADING_SCENE = "res://scenes/loading.tscn"
 var LEVEL_SELECTOR_SCENE = "res://scenes/LevelMenu/levelSelector.tscn"
@@ -29,3 +29,6 @@ func toggle_volume():
 		volume_button.texture_file = SOUND_OFF
 	else:
 		volume_button.texture_file = SOUND_ON
+
+func _on_exit_clicked():
+	get_tree().quit()
