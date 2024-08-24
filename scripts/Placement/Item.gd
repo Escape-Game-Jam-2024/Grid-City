@@ -11,6 +11,7 @@ enum Layers {
 	HOUSE,
 }
 var layerOn
+
 func _process(delta):
 	var mouse_tile: Vector2i = GameManager.tilemap.local_to_map(get_global_mouse_position())
 	var local_pos: Vector2 = GameManager.tilemap.map_to_local(mouse_tile)
@@ -40,10 +41,16 @@ func _unhandled_input(event):
 		deny.hide()
 	# unselect item
 	if event is InputEventMouseButton && event.pressed && event.button_index == MOUSE_BUTTON_RIGHT:
-		set_process(true)
-		set_process_unhandled_input(true)
+		set_process(false)
+		set_process_unhandled_input(false)
 		area_2d.monitoring = false
 		ok.hide()
 		deny.hide()
+		GameManager.emit_signal("item_unselected",self)
+	
+	
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		GameManager.emit_signal("item_unselected",self)
 
