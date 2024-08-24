@@ -1,5 +1,7 @@
 extends TileMap
 
+@onready var node_2d:Node2D = $Node2D
+
 var fill_grid_size = Vector2i(256, 256)
 var grid_size = Vector2i(80, 64)
 
@@ -59,7 +61,7 @@ func generate_city_layout() -> void:
 	generate_pavements()
 	place_houses()
 	fill_grass()
-
+	GameManager.cityLayout = city_layout
 func generate_roads():
 	
 	# main vertical road
@@ -153,5 +155,11 @@ func fill_grid_with_zeros():
 	
 	return grid
 
+func getLayerFromPosition(x,y):
+	return city_layout[x][y]
+	
 func place_object(obj):
-	$Node2D.add_child(obj)
+	node_2d.add_child(obj)
+
+func remove_object(obj):
+	obj.queue_free()
