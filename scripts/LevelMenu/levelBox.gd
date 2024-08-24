@@ -41,7 +41,7 @@ func _on_gui_input(event):
 		return
 	if event is InputEventMouseButton and event.pressed:
 		level_selected.emit(level_num)
-		print("Clicked level ", level_num)
+		SceneLoader.load_scene("res://scenes/tileMap.tscn",true)
 
 func set_stars(value):
 	stars = value
