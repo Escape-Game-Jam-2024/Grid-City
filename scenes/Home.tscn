@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bv4hv72psbjw0"]
 
 [ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_4mw74"]
-[ext_resource type="FontFile" uid="uid://dk4ph3bjgo8ek" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
+[ext_resource type="FontFile" uid="uid://6x58ijynoqny" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
 [ext_resource type="PackedScene" uid="uid://clsjlrtnife1o" path="res://scenes/rect_button.tscn" id="3_tx5re"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="4_l0k85"]
 [ext_resource type="AudioStream" uid="uid://i0k5l1jf0f1x" path="res://assets/audio/background/home_screen_sound.mp3" id="5_8f5bc"]
@@ -25,15 +25,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -530.0
-offset_top = -291.0
-offset_right = 530.0
-offset_bottom = 291.0
+offset_left = -510.0
+offset_top = -361.0
+offset_right = 550.0
+offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
 pivot_offset = Vector2(530, 291)
-theme_override_constants/separation = 100
+theme_override_constants/separation = 50
 alignment = 1
 script = ExtResource("1_4mw74")
 
@@ -44,7 +44,7 @@ theme_override_constants/separation = 50
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Top"]
 layout_mode = 2
-theme_override_constants/margin_top = 70
+theme_override_constants/margin_top = 30
 
 [node name="Title" type="RichTextLabel" parent="VBoxContainer/Top/MarginContainer"]
 layout_mode = 2
@@ -56,11 +56,19 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Top"]
+[node name="CenterContainer" type="VBoxContainer" parent="VBoxContainer/Top"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
 
 [node name="PlayButton" parent="VBoxContainer/Top/CenterContainer" instance=ExtResource("3_tx5re")]
 layout_mode = 2
+
+[node name="Exit" parent="VBoxContainer/Top/CenterContainer" instance=ExtResource("3_tx5re")]
+layout_mode = 2
+text = "Exit"
 
 [node name="Bottom" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -75,14 +83,4 @@ texture_file = "res://assets/GUI/Button/Icon/SoundOn.png"
 layout_mode = 2
 texture_file = "res://assets/GUI/Button/Icon/Levels.png"
 
-[node name="HomeScreenSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
-position = Vector2(-110, -69)
-stream = ExtResource("5_8f5bc")
-
-[node name="GamePlaySound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
-position = Vector2(-110, -69)
-stream = ExtResource("7_gdh2l")
-
-[node name="MenuSelectSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
-position = Vector2(-110, -69)
-stream = ExtResource("7_jpvbo")
+[connection signal="clicked" from="VBoxContainer/Top/CenterContainer/Exit" to="VBoxContainer" method="_on_exit_clicked"]

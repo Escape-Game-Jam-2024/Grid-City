@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/LevelMenu/levelSelector.gd" id="1_qng0c"]
 [ext_resource type="Script" path="res://scripts/LevelMenu/level_selector_nav.gd" id="2_mpynw"]
-[ext_resource type="Texture2D" uid="uid://5tblekd1u020" path="res://assets/gui/Level/Star/Active.png" id="3_2ftkj"]
-[ext_resource type="FontFile" uid="uid://pf7m2v35pv56" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="4_8f4na"]
+[ext_resource type="Texture2D" uid="uid://soe3jjbkhdky" path="res://assets/GUI/Level/Star/Active.png" id="3_2ftkj"]
+[ext_resource type="FontFile" uid="uid://qhg601yg505b" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="4_8f4na"]
 [ext_resource type="PackedScene" uid="uid://ti5oj1f382d2" path="res://scenes/LevelMenu/levelGrid.tscn" id="5_vxtc4"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="6_1hbhd"]
 [ext_resource type="AudioStream" uid="uid://bikhedaeygg02" path="res://assets/audio/background/stage_sound.wav" id="7_wh6na"]
@@ -58,6 +58,8 @@ layout_mode = 2
 [node name="Star" type="TextureRect" parent="VBoxContainer/Top/MarginContainer/StarCounter"]
 layout_mode = 2
 texture = ExtResource("3_2ftkj")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Content" type="HBoxContainer" parent="VBoxContainer/Top/MarginContainer/StarCounter"]
 layout_mode = 2
@@ -111,16 +113,17 @@ layout_mode = 2
 texture_file = "res://assets/gui/Button/Icon/SoundOn.png"
 
 [node name="NavButtons" type="HBoxContainer" parent="VBoxContainer/Bottom"]
+custom_minimum_size = Vector2(220, 83)
 layout_mode = 2
 theme_override_constants/separation = 60
 
 [node name="PrevButton" parent="VBoxContainer/Bottom/NavButtons" instance=ExtResource("6_1hbhd")]
 layout_mode = 2
-texture_file = "res://assets/gui/Button/Icon/ArrowLeft-Bold.png"
+texture_file = "res://assets/gui/Button/Icon/ArrowLeft-Thin.png"
 
 [node name="NextButton" parent="VBoxContainer/Bottom/NavButtons" instance=ExtResource("6_1hbhd")]
 layout_mode = 2
-texture_file = "res://assets/GUI/Button/Icon/ArrowRight-Bold.png"
+texture_file = "res://assets/GUI/Button/Icon/ArrowRight-Thin.png"
 
 [node name="HomeButton" parent="VBoxContainer/Bottom" instance=ExtResource("6_1hbhd")]
 layout_mode = 2

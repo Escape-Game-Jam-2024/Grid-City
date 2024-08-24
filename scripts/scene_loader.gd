@@ -26,7 +26,10 @@ func load_scene(path: String, show_loading: bool = true):
 
 		loading_scene_instance.get_node('VBoxContainer').timeout.connect(set_timeout_reached)
 	else:
-		get_tree().change_scene_to_packed(ResourceLoader.load(path))
+		if ResourceLoader.has_cached(path):
+			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(path))
+		else:
+			get_tree().change_scene_to_packed(ResourceLoader.load(path))
 
 func set_timeout_reached():
 	timeout_reached = true

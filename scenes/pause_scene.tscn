@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6hni3b7plbif"]
+[gd_scene load_steps=8 format=3 uid="uid://c6hni3b7plbif"]
 
-[ext_resource type="FontFile" uid="uid://bbxk528upy8os" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="1_57ag2"]
+[ext_resource type="Script" path="res://scripts/pause_scene.gd" id="1_2aib0"]
+[ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="1_57ag2"]
 [ext_resource type="Material" uid="uid://bvj114mfwpn1k" path="res://assets/material/blur.tres" id="1_g4u82"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="2_vkbkx"]
 
@@ -52,6 +53,7 @@ offset_right = -959.0
 offset_bottom = -535.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2aib0")
 
 [node name="Blur" type="ColorRect" parent="."]
 material = ExtResource("1_g4u82")
@@ -62,7 +64,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Center" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,7 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="Title" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Title" type="RichTextLabel" parent="Center"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_57ag2")
 theme_override_font_sizes/normal_font_size = 70
@@ -87,19 +89,19 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Center"]
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="RestartButton" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_vkbkx")]
+[node name="RestartButton" parent="Center/HBoxContainer" instance=ExtResource("2_vkbkx")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 5
 texture_file = "res://assets/gui/Button/Icon/Replay.png"
 
-[node name="PlayButton" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_vkbkx")]
+[node name="PlayButton" parent="Center/HBoxContainer" instance=ExtResource("2_vkbkx")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -111,7 +113,7 @@ libraries = {
 "": SubResource("AnimationLibrary_55i3j")
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Bottom" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -121,14 +123,19 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Bottom"]
 layout_mode = 2
-theme_override_constants/margin_right = 70
-theme_override_constants/margin_bottom = 70
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 50
 
-[node name="RestartButton" parent="HBoxContainer/MarginContainer" instance=ExtResource("2_vkbkx")]
+[node name="LevelSelectorButton" parent="Bottom/MarginContainer" instance=ExtResource("2_vkbkx")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 5
 texture_file = "res://assets/gui/Button/Icon/Levels.png"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="clicked" from="Center/HBoxContainer/RestartButton" to="." method="_on_restart_button_clicked"]
+[connection signal="clicked" from="Center/HBoxContainer/PlayButton" to="." method="_on_play_button_clicked"]
+[connection signal="clicked" from="Bottom/MarginContainer/LevelSelectorButton" to="." method="_on_level_selector_button_clicked"]

@@ -4,11 +4,12 @@ extends Sprite2D
 @onready var ok: ColorRect = $Ok
 @onready var deny: ColorRect = $Deny
 
-func _process(delta):
+func _process(_delta):
 	var mouse_tile = GameManager.tilemap.local_to_map(get_global_mouse_position())
 	var local_pos = GameManager.tilemap.map_to_local(mouse_tile)
 	var world_pos = GameManager.tilemap.to_global(local_pos)
-	global_position = world_pos
+	global_position = world_pos + Vector2(959, 540)
+	
 	if $Area2D.get_overlapping_areas().size() > 0:
 		$Deny.show()
 		$Ok.hide()
@@ -28,4 +29,3 @@ func _unhandled_input(event):
 		
 		$Ok.hide()
 		$Deny.hide()
-

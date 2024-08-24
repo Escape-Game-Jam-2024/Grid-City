@@ -1,0 +1,144 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbgcre5xiw6yy"]
+
+[ext_resource type="Texture2D" uid="uid://cft5yxsftbo64" path="res://assets/GUI/Panels/msg_regular.tres" id="1_frmoi"]
+[ext_resource type="Script" path="res://scripts/dialog_box.gd" id="1_hembq"]
+[ext_resource type="Material" uid="uid://bvj114mfwpn1k" path="res://assets/material/blur.tres" id="1_v8rfq"]
+[ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_emehd"]
+[ext_resource type="PackedScene" uid="uid://clsjlrtnife1o" path="res://scenes/rect_button.tscn" id="3_gmew0"]
+
+[sub_resource type="Animation" id="Animation_a8r3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blur:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vyl2q"]
+resource_name = "start_pause"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blur:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_55i3j"]
+_data = {
+"RESET": SubResource("Animation_a8r3r"),
+"start_pause": SubResource("Animation_vyl2q")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -959.0
+offset_top = -535.0
+offset_right = -959.0
+offset_bottom = -535.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+script = ExtResource("1_hembq")
+show_blur = true
+dialog_text = "some text"
+primary_button_text = "OK"
+secondary_button_text = "Cancel"
+dialog_box_size = Vector2(450, 300)
+
+[node name="Blur" type="ColorRect" parent="."]
+material = ExtResource("1_v8rfq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(0.196078, 0.180392, 0.184314, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -150.0
+offset_right = 225.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 150)
+size_flags_vertical = 3
+texture = ExtResource("1_frmoi")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Main" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="DialogTop" type="MarginContainer" parent="NinePatchRect/MarginContainer/Main"]
+layout_mode = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_right = 70
+
+[node name="DialogText" type="RichTextLabel" parent="NinePatchRect/MarginContainer/Main/DialogTop"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_emehd")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[center]some text"
+fit_content = true
+
+[node name="DialogBottom" type="HBoxContainer" parent="NinePatchRect/MarginContainer/Main"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="PrimaryButton" parent="NinePatchRect/MarginContainer/Main/DialogBottom" instance=ExtResource("3_gmew0")]
+layout_mode = 2
+text = "OK"
+
+[node name="SecondaryButton" parent="NinePatchRect/MarginContainer/Main/DialogBottom" instance=ExtResource("3_gmew0")]
+layout_mode = 2
+text = "Cancel"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_55i3j")
+}
+
+[connection signal="resized" from="NinePatchRect/MarginContainer" to="." method="_on_margin_container_resized"]
