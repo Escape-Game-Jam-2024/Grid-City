@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://biebd6rq0xdie"]
 
-[ext_resource type="Texture2D" uid="uid://cmiluhpi4f4x6" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_hy1kx"]
+[ext_resource type="Texture2D" uid="uid://dl1g3ltdayeg6" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_hy1kx"]
 [ext_resource type="Script" path="res://scripts/tileMap.gd" id="2_qpgmx"]
 [ext_resource type="PackedScene" uid="uid://dc1p6h8d0rhf8" path="res://scenes/Placement/tool_bar.tscn" id="3_l1pi5"]
 
