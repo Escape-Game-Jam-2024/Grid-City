@@ -154,9 +154,6 @@ func fill_grid_with_zeros():
 		grid.append(row)
 	
 	return grid
-
-func getLayerFromPosition(x,y):
-	return city_layout[x][y]
 	
 func place_object(obj):
 	node_2d.add_child(obj)
