@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://biebd6rq0xdie"]
+[gd_scene load_steps=6 format=3 uid="uid://biebd6rq0xdie"]
 
-[ext_resource type="Texture2D" uid="uid://6ku62gqb0hpc" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_hy1kx"]
+[ext_resource type="Texture2D" uid="uid://cmiluhpi4f4x6" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_hy1kx"]
 [ext_resource type="Script" path="res://scripts/tileMap.gd" id="2_qpgmx"]
+[ext_resource type="PackedScene" uid="uid://dc1p6h8d0rhf8" path="res://scenes/Placement/tool_bar.tscn" id="3_l1pi5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31l8p"]
 resource_name = "CityPack"
@@ -430,19 +431,10 @@ texture = ExtResource("1_hy1kx")
 18:25/0 = 0
 17:26/0 = 0
 18:26/0 = 0
-24:26/0 = 0
-26:26/0 = 0
-27:26/0 = 0
-29:26/0 = 0
-31:26/0 = 0
 16:27/0 = 0
 17:27/0 = 0
 18:27/0 = 0
 19:27/0 = 0
-24:27/0 = 0
-26:27/0 = 0
-29:27/0 = 0
-31:27/0 = 0
 1:28/0 = 0
 2:28/0 = 0
 3:28/0 = 0
@@ -482,7 +474,6 @@ texture = ExtResource("1_hy1kx")
 24:33/0 = 0
 25:33/0 = 0
 26:33/0 = 0
-27:33/0 = 0
 1:38/0 = 0
 3:38/0 = 0
 5:38/0 = 0
@@ -634,11 +625,19 @@ texture = ExtResource("1_hy1kx")
 18:11/size_in_atlas = Vector2i(3, 3)
 18:11/0 = 0
 17:13/0 = 0
+31:26/size_in_atlas = Vector2i(1, 2)
+31:26/0 = 0
+24:26/size_in_atlas = Vector2i(1, 2)
+24:26/0 = 0
+26:26/size_in_atlas = Vector2i(2, 2)
+26:26/0 = 0
+29:26/size_in_atlas = Vector2i(1, 2)
+29:26/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_5d0rp"]
 sources/0 = SubResource("TileSetAtlasSource_31l8p")
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMap" type="TileMap" groups=["tilemapGroup"]]
 tile_set = SubResource("TileSet_5d0rp")
 format = 2
 layer_0/name = "ground"
@@ -651,3 +650,7 @@ layer_3/tile_data = PackedInt32Array()
 layer_4/name = "house"
 layer_4/tile_data = PackedInt32Array()
 script = ExtResource("2_qpgmx")
+
+[node name="ToolBar" parent="." instance=ExtResource("3_l1pi5")]
+
+[node name="Node2D" type="Node2D" parent="."]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc1p6h8d0rhf8"]
+
+[ext_resource type="PackedScene" uid="uid://ccudlvu2w246i" path="res://scenes/Placement/slot.tscn" id="1_d41xx"]
+
+[node name="ToolBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot" parent="HBoxContainer" instance=ExtResource("1_d41xx")]
+layout_mode = 2
+item_name = "pole"

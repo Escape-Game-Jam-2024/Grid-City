@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv4hv72psbjw0"]
 
 [ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_4mw74"]
-[ext_resource type="FontFile" uid="uid://dwljn4tok0ixl" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
+[ext_resource type="FontFile" uid="uid://dk4ph3bjgo8ek" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
 [ext_resource type="PackedScene" uid="uid://clsjlrtnife1o" path="res://scenes/rect_button.tscn" id="3_tx5re"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="4_l0k85"]
 
