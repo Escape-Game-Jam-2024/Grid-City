@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://biebd6rq0xdie"]
 
-[ext_resource type="Texture2D" uid="uid://i63wwq44yoev" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_hy1kx"]
+[ext_resource type="Texture2D" uid="uid://cmiluhpi4f4x6" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_hy1kx"]
 [ext_resource type="Script" path="res://scripts/tileMap.gd" id="2_qpgmx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31l8p"]
