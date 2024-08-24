@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxxb4t8tct4tt"]
 
 [ext_resource type="Script" path="res://scripts/test_01.gd" id="1_1aiyc"]
-[ext_resource type="Texture2D" uid="uid://i63wwq44yoev" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="2_ntq0f"]
+[ext_resource type="Texture2D" uid="uid://dl1g3ltdayeg6" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="2_ntq0f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kfnlj"]
 texture = ExtResource("2_ntq0f")

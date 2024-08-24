@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bppixl0asd6sk"]
+[gd_scene load_steps=4 format=3 uid="uid://c7tsndhsnx7a8"]
 
 [ext_resource type="PackedScene" uid="uid://biebd6rq0xdie" path="res://scenes/tileMap.tscn" id="1_is0n4"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="1_kun8t"]
 [ext_resource type="PackedScene" uid="uid://i8imh00816ed" path="res://scenes/in_game_ui.tscn" id="2_ocjqq"]
 
 [node name="GameScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+script = ExtResource("1_kun8t")
 
-[node name="TileMap" parent="." instance=ExtResource("1_is0n4")]
-
-[node name="InGameUI" parent="." instance=ExtResource("2_ocjqq")]
+[node name="InGameUI" parent="Camera2D" instance=ExtResource("2_ocjqq")]
 offset = Vector2(949, 540)
 transform = Transform2D(1, 0, 0, 1, 949, 540)
+
+[node name="TileMap" parent="." instance=ExtResource("1_is0n4")]

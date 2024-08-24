@@ -3,13 +3,7 @@ extends Sprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var ok: ColorRect = $Ok
 @onready var deny: ColorRect = $Deny
-enum Layers {
-	GROUND,
-	GRASS,
-	ROAD,
-	PAVEMENT,
-	HOUSE,
-}
+
 var layerOn
 
 func _process(delta):
@@ -17,8 +11,9 @@ func _process(delta):
 	var local_pos: Vector2 = GameManager.tilemap.map_to_local(mouse_tile)
 	var world_pos: Vector2 = GameManager.tilemap.to_global(local_pos)
 	global_position = world_pos
-	layerOn = GameManager.cityLayout[mouse_tile.x][mouse_tile.y]
-	if (area_2d.get_overlapping_areas().size() > 0 ) || !(layerOn == Layers.PAVEMENT) :
+	layerOn = GameManager.cityLayout[mouse_tile.x][mouse_tile.y + 1]
+	# print('layer: ', GameManager.Layers.keys()[layerOn], ' pos: ', mouse_tile)
+	if (area_2d.get_overlapping_areas().size() > 0 ) || !(layerOn == GameManager.Layers.PAVEMENT):
 		deny.show()
 		ok.hide()
 	else:
@@ -32,7 +27,7 @@ func _unhandled_input(event):
 		for obj in arr:
 			obj.get_parent().queue_free()
 		
-		if !( (area_2d.get_overlapping_areas().size() > 0 ) || !(layerOn == Layers.PAVEMENT) ):
+		if !( (area_2d.get_overlapping_areas().size() > 0 ) || !(layerOn == GameManager.Layers.PAVEMENT) ):
 			set_process(false)
 			set_process_unhandled_input(false)
 			area_2d.monitoring = false
