@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="1_3lgix"]
 [ext_resource type="Script" path="res://scripts/in_game_ui.gd" id="1_cwecn"]
 [ext_resource type="PackedScene" uid="uid://c6hni3b7plbif" path="res://scenes/pause_scene.tscn" id="3_gqwsv"]
-[ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_q475d"]
-[ext_resource type="PackedScene" uid="uid://bbgcre5xiw6yy" path="res://scenes/dialog_box.tscn" id="4_qyeie"]
+[ext_resource type="FontFile" uid="uid://bbetws86nfi02" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_q475d"]
+[ext_resource type="PackedScene" path="res://scenes/dialog_box.tscn" id="4_qyeie"]
 [ext_resource type="PackedScene" uid="uid://dc1p6h8d0rhf8" path="res://scenes/Placement/tool_bar.tscn" id="4_y2k5j"]
 
 [node name="InGameUI" type="CanvasLayer"]
