@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://fct3w40be0vo"]
+[gd_scene load_steps=9 format=3 uid="uid://fct3w40be0vo"]
 
 [ext_resource type="Script" path="res://scripts/LevelMenu/levelSelector.gd" id="1_qng0c"]
 [ext_resource type="Script" path="res://scripts/LevelMenu/level_selector_nav.gd" id="2_mpynw"]
-[ext_resource type="Texture2D" uid="uid://soe3jjbkhdky" path="res://assets/GUI/Level/Star/Active.png" id="3_2ftkj"]
-[ext_resource type="FontFile" uid="uid://qhg601yg505b" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="4_8f4na"]
+[ext_resource type="Texture2D" uid="uid://dtukubqby5okd" path="res://assets/GUI/Level/Star/Active.png" id="3_2ftkj"]
+[ext_resource type="FontFile" uid="uid://oah640w1r7qk" path="res://assets/fonts/squada-one/SquadaOne-Regular.ttf" id="4_8f4na"]
 [ext_resource type="PackedScene" uid="uid://ti5oj1f382d2" path="res://scenes/LevelMenu/levelGrid.tscn" id="5_vxtc4"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="6_1hbhd"]
+[ext_resource type="AudioStream" uid="uid://d0sum2quqb0pf" path="res://assets/audio/background/stages_home.mp3" id="7_7loix"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i0e4i"]
 font = ExtResource("4_8f4na")
@@ -127,6 +128,10 @@ texture_file = "res://assets/GUI/Button/Icon/ArrowRight-Thin.png"
 [node name="HomeButton" parent="VBoxContainer/Bottom" instance=ExtResource("6_1hbhd")]
 layout_mode = 2
 texture_file = "res://assets/gui/Button/Icon/Home.png"
+
+[node name="LevelSelectorMusic" type="AudioStreamPlayer2D" parent="VBoxContainer"]
+position = Vector2(-430, -215.5)
+stream = ExtResource("7_7loix")
 
 [connection signal="pressed" from="VBoxContainer/Bottom/NavButtons/PrevButton" to="." method="_on_PrevButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Bottom/NavButtons/NextButton" to="." method="_on_NextButton_pressed"]

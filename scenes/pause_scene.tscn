@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6hni3b7plbif"]
 
 [ext_resource type="Script" path="res://scripts/pause_scene.gd" id="1_2aib0"]
-[ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="1_57ag2"]
+[ext_resource type="FontFile" uid="uid://eh1nc54sujt3" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="1_57ag2"]
 [ext_resource type="Material" uid="uid://bvj114mfwpn1k" path="res://assets/material/blur.tres" id="1_g4u82"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="2_vkbkx"]
 
