@@ -36,22 +36,50 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Top"]
+[node name="CenterContainer" type="CenterContainer" parent="Menu/Top"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Level" type="PanelContainer" parent="Menu/Top/CenterContainer"]
+custom_minimum_size = Vector2(370, 83)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Top/CenterContainer/Level"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_q475d")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "[center] Level 1"
+fit_content = true
+scroll_active = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/Top"]
 layout_mode = 2
-theme_override_constants/separation = 1700
+theme_override_constants/separation = 1400
 
 [node name="BackButton" parent="Menu/Top/HBoxContainer" instance=ExtResource("1_3lgix")]
 layout_mode = 2
 texture_file = "res://assets/GUI/Button/Icon/ArrowLeft-Thin.png"
 
-[node name="PauseButton" parent="Menu/Top/HBoxContainer" instance=ExtResource("1_3lgix")]
+[node name="Right" type="HBoxContainer" parent="Menu/Top/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Timer" type="PanelContainer" parent="Menu/Top/HBoxContainer/Right"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Top/HBoxContainer/Right/Timer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_q475d")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center] 02:00"
+
+[node name="PauseButton" parent="Menu/Top/HBoxContainer/Right" instance=ExtResource("1_3lgix")]
 layout_mode = 2
 texture_file = "res://assets/GUI/Button/Icon/Pause.png"
 
@@ -73,6 +101,7 @@ layout_mode = 2
 theme_override_constants/separation = 1720
 
 [node name="Panel" type="PanelContainer" parent="Menu/Bottom/HBoxContainer"]
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -92,10 +121,15 @@ process_mode = 3
 dialog_text = "Are you sure you want to exit? All progress will be lost."
 dialog_box_size = Vector2(700, 400)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
 [connection signal="clicked" from="Menu/Top/HBoxContainer/BackButton" to="." method="go_to_level_selector"]
-[connection signal="clicked" from="Menu/Top/HBoxContainer/PauseButton" to="." method="_on_pause_button_clicked"]
+[connection signal="clicked" from="Menu/Top/HBoxContainer/Right/PauseButton" to="." method="_on_pause_button_clicked"]
 [connection signal="level_selector" from="PauseScene" to="." method="go_to_level_selector"]
 [connection signal="play" from="PauseScene" to="." method="_on_pause_scene_play"]
 [connection signal="restart" from="PauseScene" to="." method="_on_pause_scene_restart"]
 [connection signal="primary_button_clicked" from="DialogBox" to="." method="_on_dialog_box_primary_button_clicked"]
 [connection signal="secondary_button_clicked" from="DialogBox" to="." method="_on_dialog_box_secondary_button_clicked"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6,8 +6,10 @@
 [node name="GameScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [node name="TileMap" parent="." instance=ExtResource("1_is0n4")]
-position = Vector2(-959, -540)
 
 [node name="InGameUI" parent="." instance=ExtResource("2_ocjqq")]
+offset = Vector2(959, 535)
+transform = Transform2D(1, 0, 0, 1, 959, 535)
