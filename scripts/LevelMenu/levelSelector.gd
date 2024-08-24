@@ -3,12 +3,16 @@ extends ColorRect
 @onready var gridbox = $VBoxContainer/Top/CenterContainer/ClipControl/GridBox
 @onready var stars_label = $VBoxContainer/Top/MarginContainer/StarCounter/Content/Stars
 @onready var total_stars_label = $VBoxContainer/Top/MarginContainer/StarCounter/Content/TotalStars
+@onready var prev_button: Control = $VBoxContainer/Bottom/NavButtons/PrevButton
+@onready var next_button: Control = $VBoxContainer/Bottom/NavButtons/NextButton
+@onready var nav_buttons_container: HBoxContainer = $VBoxContainer/Bottom/NavButtons
 
 var num_grids = 1
 var total_stars = 1
 var current_grid = 1
 var grid_width = 1
 var level_stars = [3, 2, 1, 2, 1, 0]
+var tween: Tween = null
 
 func _ready():
 	grid_width = gridbox.get_child(0).get_size().x
@@ -28,17 +32,45 @@ func _ready():
 				box.locked = false
 				box.stars = level_stars[num - 1]
 
+	prev_button.hide()
+	nav_buttons_container.alignment = BoxContainer.ALIGNMENT_END
+
+func toggle_buttons(direction: int = 1):
+	if current_grid == 2 and direction == -1:
+		nav_buttons_container.alignment = BoxContainer.ALIGNMENT_END
+		prev_button.hide()
+	elif current_grid == num_grids - 1 and direction == 1:
+		nav_buttons_container.alignment = BoxContainer.ALIGNMENT_BEGIN
+		next_button.hide()
+	else:
+		prev_button.show()
+		next_button.show()
+
+func tween_animate(direction: int = 1):
+	tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(gridbox, "position:x", gridbox.position.x + direction * grid_width, 0.5)
+
+	await tween.finished
+
+	tween = null
+
 func _on_PrevButton_pressed():
+	if tween != null: return
+
+	toggle_buttons(-1)
+
 	if current_grid > 1:
 		current_grid -= 1
-		var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-		tween.tween_property(gridbox, "position:x", gridbox.position.x + grid_width, 0.5)
+		tween_animate()
 
 func _on_NextButton_pressed():
+	if tween != null: return
+
+	toggle_buttons()
+
 	if current_grid < num_grids:
 		current_grid += 1
-		var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-		tween.tween_property(gridbox, "position:x", gridbox.position.x - grid_width, 0.5)
+		tween_animate(-1)
 
 func get_stars():
 	var stars = 0

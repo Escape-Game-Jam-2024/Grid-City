@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cco1nnsj85j4i"]
+
+[ext_resource type="Texture2D" uid="uid://cft5yxsftbo64" path="res://assets/GUI/Panels/msg_regular.tres" id="1_mmolb"]
+
+[resource]
+texture = ExtResource("1_mmolb")
+modulate_color = Color(0.956863, 1, 0.956863, 1)

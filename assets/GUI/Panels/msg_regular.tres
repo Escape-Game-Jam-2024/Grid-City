@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cft5yxsftbo64"]
+
+[ext_resource type="Texture2D" uid="uid://cgut2adnrkoch" path="res://assets/GUI/Panels/HumbleGift.png" id="1_e001o"]
+
+[resource]
+atlas = ExtResource("1_e001o")
+region = Rect2(30.543, 223.439, 159.339, 65.1866)
