@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://biebd6rq0xdie"]
+[gd_scene load_steps=7 format=3 uid="uid://biebd6rq0xdie"]
 
-[ext_resource type="Texture2D" uid="uid://dl1g3ltdayeg6" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_hy1kx"]
+[ext_resource type="Texture2D" uid="uid://cmiluhpi4f4x6" path="res://assets/City Down Down/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_hy1kx"]
+[ext_resource type="Texture2D" uid="uid://db2dxowbkb0j7" path="res://assets/shock.png" id="2_mw2y4"]
 [ext_resource type="Script" path="res://scripts/tileMap.gd" id="2_qpgmx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31l8p"]
@@ -633,8 +634,50 @@ texture = ExtResource("1_hy1kx")
 29:26/size_in_atlas = Vector2i(1, 2)
 29:26/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_acvmq"]
+resource_name = "Shock"
+texture = ExtResource("2_mw2y4")
+0:1/size_in_atlas = Vector2i(4, 2)
+0:1/animation_columns = 4
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+0:5/size_in_atlas = Vector2i(4, 2)
+0:5/animation_columns = 4
+0:5/animation_frame_0/duration = 1.0
+0:5/animation_frame_1/duration = 1.0
+0:5/animation_frame_2/duration = 1.0
+0:5/animation_frame_3/duration = 1.0
+0:5/0 = 0
+1:9/size_in_atlas = Vector2i(2, 2)
+1:9/animation_columns = 4
+1:9/animation_separation = Vector2i(2, 0)
+1:9/animation_frame_0/duration = 1.0
+1:9/animation_frame_1/duration = 1.0
+1:9/animation_frame_2/duration = 1.0
+1:9/animation_frame_3/duration = 1.0
+1:9/0 = 0
+0:17/size_in_atlas = Vector2i(4, 2)
+0:17/animation_columns = 4
+0:17/animation_frame_0/duration = 1.0
+0:17/animation_frame_1/duration = 1.0
+0:17/animation_frame_2/duration = 1.0
+0:17/animation_frame_3/duration = 1.0
+0:17/0 = 0
+1:25/size_in_atlas = Vector2i(2, 2)
+1:25/animation_columns = 4
+1:25/animation_separation = Vector2i(2, 0)
+1:25/animation_frame_0/duration = 1.0
+1:25/animation_frame_1/duration = 1.0
+1:25/animation_frame_2/duration = 1.0
+1:25/animation_frame_3/duration = 1.0
+1:25/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_5d0rp"]
 sources/0 = SubResource("TileSetAtlasSource_31l8p")
+sources/1 = SubResource("TileSetAtlasSource_acvmq")
 
 [node name="TileMap" type="TileMap" groups=["tilemapGroup"]]
 tile_set = SubResource("TileSet_5d0rp")
