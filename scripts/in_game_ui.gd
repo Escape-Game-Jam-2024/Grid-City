@@ -101,6 +101,7 @@ func set_instruction():
 func _on_tutorial_primary_button_clicked():
 	tutorial_dialog.hide()
 	GameManager.is_first_play = false
+	current_instruction_index = 0
 
 func _on_tutorial_secondary_button_clicked():
 	var current_instruction = tutorial_intructions[current_instruction_index]
