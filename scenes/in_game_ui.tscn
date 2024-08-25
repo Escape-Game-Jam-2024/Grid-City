@@ -121,7 +121,6 @@ dialog_box_size = Vector2(1200, 500)
 
 [node name="DialogBox" parent="." instance=ExtResource("4_qyeie")]
 process_mode = 3
-visible = false
 dialog_text = "Are you sure you want to exit? All progress will be lost."
 dialog_box_size = Vector2(700, 400)
 unpause_after_close = null

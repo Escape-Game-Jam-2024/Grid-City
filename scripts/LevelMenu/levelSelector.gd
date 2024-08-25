@@ -11,10 +11,12 @@ var num_grids = 1
 var total_stars = 1
 var current_grid = 1
 var grid_width = 1
-var level_stars = [3, 2, 1, 2, 1, 0]
+var level_stars: Array[int]
 var tween: Tween = null
 
 func _ready():
+	level_stars = GameManager.level_stars
+
 	grid_width = gridbox.get_child(0).get_size().x
 	# Number all the level boxes
 	num_grids = gridbox.get_child_count()
