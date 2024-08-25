@@ -11,11 +11,6 @@ enum Layers {
 	Poles,
 }
 
-var level_results: Dictionary = {}
-var current_level: int = 1
-var selected_level: int = 1
-var last_level_played: int
-
 signal item_selected
 signal item_unselected
 signal item_placed
@@ -23,11 +18,17 @@ signal pole_limit_exceeded
 signal level_selected
 signal play_clicked
 
+var level_results: Dictionary = {}
+var current_level: int = 1
+var selected_level: int = 1
+var last_level_played: int
 var tilemap: TileMap
 var cityLayout: Array
 var can_place_poles: bool = true
 var is_level_select: bool = false
 var is_play_click: bool = false
+var is_first_play: bool = true
+var level_stars: Array[int] = [0]
 
 var grid_size = Vector2i(118, 64)
 
