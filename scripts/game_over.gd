@@ -70,3 +70,5 @@ func set_stars():
 func _exit_tree():
 	for star in duplicate_stars:
 		stars_container.remove_child(star)
+		star.free()
+	queue_free()
