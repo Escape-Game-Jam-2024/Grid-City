@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_4fmqg"]
 [ext_resource type="PackedScene" uid="uid://biebd6rq0xdie" path="res://scenes/tileMap.tscn" id="1_is0n4"]
 [ext_resource type="PackedScene" uid="uid://i8imh00816ed" path="res://scenes/in_game_ui.tscn" id="2_ocjqq"]
+[ext_resource type="AudioStream" uid="uid://b0ahwble48a0q" path="res://assets/audio/background/grid_gameplay.wav" id="2_rp4d0"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_4fmqg")
@@ -11,6 +12,10 @@ script = ExtResource("1_4fmqg")
 anchor_mode = 0
 
 [node name="TileMap" parent="." instance=ExtResource("1_is0n4")]
+
+[node name="GameSound" type="AudioStreamPlayer2D" parent="TileMap"]
+stream = ExtResource("2_rp4d0")
+autoplay = true
 
 [node name="InGameUI" parent="." instance=ExtResource("2_ocjqq")]
 offset = Vector2(959, 535)

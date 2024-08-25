@@ -8,6 +8,7 @@ signal clicked
 		texture_file = new_value
 
 @onready var texture_rect: TextureRect = $MarginContainer/TextureRect
+@onready var clickSound: AudioStreamPlayer2D = $ClickSound
 
 func _ready():
 	button_down.connect(_on_button_pressed)
@@ -20,6 +21,7 @@ func _process(_delta):
 	else: texture_rect.texture = null
 
 func _on_button_pressed():
+	clickSound.play()
 	scale = Vector2(0.97, 0.97)
 
 func _on_button_released():

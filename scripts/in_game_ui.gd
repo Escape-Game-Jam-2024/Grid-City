@@ -22,6 +22,7 @@ signal game_scene_ready
 
 var is_restart = false
 var time_elapsed: float = 0
+@onready var clickSound: AudioStreamPlayer2D = $Menu/Top/HBoxContainer/BackButton/ClickSound
 
 const LEVEL_SCENE = "res://scenes/LevelMenu/LevelSelector.tscn"
 const GAME_OVER_SCENE = "res://scenes/game_over.tscn"
@@ -41,12 +42,15 @@ func get_formatted_time() -> Array[int]:
 	return [minutes, seconds]
 
 func _on_pause_scene_play():
+	clickSound.play()
 	pause_scene.hide()
 
 func go_to_level_selector():
+	clickSound.play()
 	dialog_box.show()
 
 func _on_pause_button_clicked():
+	clickSound.play()
 	pause_scene.show()
 
 func _on_pause_scene_restart():
@@ -54,6 +58,7 @@ func _on_pause_scene_restart():
 	dialog_box.show()
 
 func _on_dialog_box_primary_button_clicked():
+	clickSound.play()
 	get_tree().paused = false
 	if not is_restart:
 		SceneLoader.load_scene(LEVEL_SCENE, false)
@@ -62,6 +67,7 @@ func _on_dialog_box_primary_button_clicked():
 		is_restart = false
 
 func _on_dialog_box_secondary_button_clicked():
+	clickSound.play()
 	dialog_box.hide()
 
 func _process(_delta):

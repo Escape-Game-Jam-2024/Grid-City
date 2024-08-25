@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv4hv72psbjw0"]
+[gd_scene load_steps=8 format=3 uid="uid://dxe52q6vw4br8"]
 
 [ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_4mw74"]
-[ext_resource type="FontFile" uid="uid://6x58ijynoqny" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
+[ext_resource type="FontFile" uid="uid://kgxrbny6rgu8" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
 [ext_resource type="PackedScene" uid="uid://clsjlrtnife1o" path="res://scenes/rect_button.tscn" id="3_tx5re"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="4_l0k85"]
+[ext_resource type="AudioStream" uid="uid://d4gwymxgpelk5" path="res://assets/audio/effects/vs-button-click-03.mp3" id="5_bkcsa"]
+[ext_resource type="AudioStream" uid="uid://d4ltcl37hf221" path="res://assets/audio/background/home_screen_sound.mp3" id="6_4s6pm"]
+
+[sub_resource type="GDScript" id="GDScript_rv6uy"]
+script/source = "extends AudioStreamPlayer2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Background" type="ColorRect"]
 anchors_preset = 15
@@ -79,5 +95,14 @@ texture_file = "res://assets/GUI/Button/Icon/SoundOn.png"
 [node name="LevelSelectorButton" parent="VBoxContainer/Bottom" instance=ExtResource("4_l0k85")]
 layout_mode = 2
 texture_file = "res://assets/GUI/Button/Icon/Levels.png"
+
+[node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
+position = Vector2(-82.5, -2.74988)
+scale = Vector2(0.625, 0.625)
+stream = ExtResource("5_bkcsa")
+script = SubResource("GDScript_rv6uy")
+
+[node name="HomeSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
+stream = ExtResource("6_4s6pm")
 
 [connection signal="clicked" from="VBoxContainer/Top/CenterContainer/Exit" to="VBoxContainer" method="_on_exit_clicked"]
