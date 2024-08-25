@@ -1,6 +1,7 @@
 extends TileMap
 
 @onready var node_2d:Node2D = $Node2D
+@onready var gameSound: AudioStreamPlayer2D = $GameSound
 
 var fill_grid_size = Vector2i(256, 256)
 var grid_size = Vector2i(80, 64)
@@ -16,6 +17,8 @@ enum Layers {
 var city_layout: Array
 
 func _ready():
+	if gameSound != null:
+		gameSound.play()
 	GameManager.tilemap = self;
 	city_layout = fill_grid_with_zeros()
 	

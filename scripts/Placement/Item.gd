@@ -3,6 +3,8 @@ extends Sprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var ok: ColorRect = $Ok
 @onready var deny: ColorRect = $Deny
+@onready var poleSoundPlay: AudioStreamPlayer2D = $PoleSoundPlay
+@onready var poleConstruction: AudioStreamPlayer2D = $PoleConstruction
 enum Layers {
 	GROUND,
 	GRASS,
@@ -33,6 +35,8 @@ func _unhandled_input(event):
 			obj.get_parent().queue_free()
 		
 		if !( (area_2d.get_overlapping_areas().size() > 0 ) || !(layerOn == Layers.PAVEMENT) ):
+			poleSoundPlay.play()
+			poleSoundPlay.connect("finished", play_connect_sound)
 			set_process(false)
 			set_process_unhandled_input(false)
 			area_2d.monitoring = false
@@ -53,4 +57,7 @@ func _unhandled_input(event):
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		GameManager.emit_signal("item_unselected",self)
+		
+func play_connect_sound():
+	poleConstruction.play()
 
