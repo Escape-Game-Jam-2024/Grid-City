@@ -24,7 +24,7 @@ var house_factor: int = 30
 func _ready():
 	if gameSound != null:
 		pass
-		#gameSound.play()
+		gameSound.play()
 	GameManager.tilemap = self;
 	
 	grid_size = GameManager.grid_size

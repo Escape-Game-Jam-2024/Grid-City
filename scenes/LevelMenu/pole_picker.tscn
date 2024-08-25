@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Placement/pole_picker.gd" id="1_dxuiv"]
 [ext_resource type="PackedScene" uid="uid://dc1p6h8d0rhf8" path="res://scenes/Placement/tool_bar.tscn" id="1_y74yo"]
-[ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_q3712"]
+[ext_resource type="FontFile" uid="uid://bsxp0dyq5i24b" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_q3712"]
 
 [node name="Panel" type="PanelContainer"]
 custom_minimum_size = Vector2(70, 70)
@@ -11,7 +11,7 @@ offset_bottom = 71.0
 size_flags_horizontal = 4
 mouse_filter = 1
 script = ExtResource("1_dxuiv")
-poles = 10
+poles = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(70, 70)
@@ -28,6 +28,6 @@ layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_q3712")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "[center] 10"
+text = "[center] 0"
 fit_content = true
 scroll_active = false
