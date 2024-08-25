@@ -103,7 +103,6 @@ theme_override_constants/separation = 1720
 
 [node name="PolePicker" parent="Menu/Bottom/HBoxContainer" instance=ExtResource("4_clbbc")]
 layout_mode = 2
-poles = 20
 
 [node name="HelpButton" parent="Menu/Bottom/HBoxContainer" instance=ExtResource("1_3lgix")]
 layout_mode = 2
