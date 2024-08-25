@@ -51,7 +51,7 @@ func _ready():
 			"text": "The grid consists of housees, roads and pavements. 
 			You have to place the poles on the road.
 			To place a pole first drag the pole image from the bottom left tool bar or left click on your mouse.
-			Subsequently place the pole by right clicking on your mouse.",
+			Subsequently place the pole by left clicking on your mouse.",
 			"size": Vector2(1200, 700),
 			"primary_button_text": "",
 			"secondary_button_text": "Next",
@@ -59,7 +59,7 @@ func _ready():
 		},
 		{
 			"text": "The pole base will turn [color=#ff0000]red[/color] on areas where you are not allowed to place poles 
-			[color=#0000ff]blue[/color] otherwise. You can cancel a pole selection by right clicking on your mouse and the same
+			[color=#00ff00]green[/color] otherwise. You can cancel a pole selection by right clicking on your mouse and the same
 			applies when you want to remove an already placed pole (make sure you right click on the base of the pole). After placing
 			two or more poles in the correct position, electricity will appear between them indicating a successful connection. In order
 			to light up a house make sure to place the pole near it.",
