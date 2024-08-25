@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="1_3lgix"]
 [ext_resource type="Script" path="res://scripts/in_game_ui.gd" id="1_cwecn"]
 [ext_resource type="PackedScene" uid="uid://c6hni3b7plbif" path="res://scenes/pause_scene.tscn" id="3_gqwsv"]
-[ext_resource type="FontFile" uid="uid://eh1nc54sujt3" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_q475d"]
-[ext_resource type="PackedScene" uid="uid://dhs6w8ebg4wrj" path="res://scenes/dialog_box.tscn" id="4_qyeie"]
-[ext_resource type="PackedScene" uid="uid://dc1p6h8d0rhf8" path="res://scenes/Placement/tool_bar.tscn" id="4_y2k5j"]
+[ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_q475d"]
+[ext_resource type="PackedScene" uid="uid://b4li84n8vv6o8" path="res://scenes/LevelMenu/pole_picker.tscn" id="4_clbbc"]
+[ext_resource type="PackedScene" uid="uid://bbgcre5xiw6yy" path="res://scenes/dialog_box.tscn" id="4_qyeie"]
 
 [node name="InGameUI" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -36,22 +36,50 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Top"]
+[node name="CenterContainer" type="CenterContainer" parent="Menu/Top"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Level" type="PanelContainer" parent="Menu/Top/CenterContainer"]
+custom_minimum_size = Vector2(370, 83)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Top/CenterContainer/Level"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_q475d")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "[center] Level 1"
+fit_content = true
+scroll_active = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/Top"]
 layout_mode = 2
-theme_override_constants/separation = 1700
+theme_override_constants/separation = 1400
 
 [node name="BackButton" parent="Menu/Top/HBoxContainer" instance=ExtResource("1_3lgix")]
 layout_mode = 2
 texture_file = "res://assets/GUI/Button/Icon/ArrowLeft-Thin.png"
 
-[node name="PauseButton" parent="Menu/Top/HBoxContainer" instance=ExtResource("1_3lgix")]
+[node name="Right" type="HBoxContainer" parent="Menu/Top/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Timer" type="PanelContainer" parent="Menu/Top/HBoxContainer/Right"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Top/HBoxContainer/Right/Timer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_q475d")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]00:00"
+
+[node name="PauseButton" parent="Menu/Top/HBoxContainer/Right" instance=ExtResource("1_3lgix")]
 layout_mode = 2
 texture_file = "res://assets/GUI/Button/Icon/Pause.png"
 
@@ -72,12 +100,9 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 theme_override_constants/separation = 1720
 
-[node name="Panel" type="PanelContainer" parent="Menu/Bottom/HBoxContainer"]
+[node name="PolePicker" parent="Menu/Bottom/HBoxContainer" instance=ExtResource("4_clbbc")]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ToolBar" parent="Menu/Bottom/HBoxContainer/Panel" instance=ExtResource("4_y2k5j")]
-layout_mode = 2
+poles = 0
 
 [node name="HelpButton" parent="Menu/Bottom/HBoxContainer" instance=ExtResource("1_3lgix")]
 layout_mode = 2
@@ -92,10 +117,14 @@ process_mode = 3
 dialog_text = "Are you sure you want to exit? All progress will be lost."
 dialog_box_size = Vector2(700, 400)
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="clicked" from="Menu/Top/HBoxContainer/BackButton" to="." method="go_to_level_selector"]
-[connection signal="clicked" from="Menu/Top/HBoxContainer/PauseButton" to="." method="_on_pause_button_clicked"]
+[connection signal="clicked" from="Menu/Top/HBoxContainer/Right/PauseButton" to="." method="_on_pause_button_clicked"]
+[connection signal="clicked" from="Menu/Bottom/HBoxContainer/HelpButton" to="." method="_on_help_button_clicked"]
 [connection signal="level_selector" from="PauseScene" to="." method="go_to_level_selector"]
 [connection signal="play" from="PauseScene" to="." method="_on_pause_scene_play"]
 [connection signal="restart" from="PauseScene" to="." method="_on_pause_scene_restart"]
 [connection signal="primary_button_clicked" from="DialogBox" to="." method="_on_dialog_box_primary_button_clicked"]
 [connection signal="secondary_button_clicked" from="DialogBox" to="." method="_on_dialog_box_secondary_button_clicked"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
