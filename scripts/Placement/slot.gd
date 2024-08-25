@@ -9,5 +9,8 @@ func _ready():
 	$TextureRect.texture = texture_inside
 
 func _on_Slot_gui_input(event):
+	if not GameManager.can_place_poles:
+		return
+		
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		GameManager.emit_signal("item_selected", texture_inside)

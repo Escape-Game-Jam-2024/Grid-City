@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://coy3qum8136og"]
 
 [ext_resource type="Script" path="res://scripts/LevelMenu/levelBox.gd" id="1_ep3dg"]
-[ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_87oco"]
-[ext_resource type="Texture2D" uid="uid://bmumspg8dcr5n" path="res://assets/GUI/Level/Button/Locked.png" id="2_e11qe"]
-[ext_resource type="Texture2D" uid="uid://0ah166gyxe57" path="res://assets/GUI/Level/Button/Dummy.png" id="2_vxbwv"]
+[ext_resource type="FontFile" uid="uid://eh1nc54sujt3" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_87oco"]
+[ext_resource type="Texture2D" uid="uid://bx424ifn5rr6k" path="res://assets/GUI/Level/Button/Locked.png" id="2_e11qe"]
+[ext_resource type="Texture2D" uid="uid://ctow5v3htsela" path="res://assets/GUI/Level/Button/Dummy.png" id="2_vxbwv"]
 [ext_resource type="PackedScene" uid="uid://bbemddlera173" path="res://scenes/LevelMenu/starBar.tscn" id="4_umw1c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2esnd"]

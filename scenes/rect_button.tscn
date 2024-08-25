@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://clsjlrtnife1o"]
 
-[ext_resource type="Texture2D" uid="uid://b0je8ijvpkn2o" path="res://assets/GUI/Button/Rect/Default.png" id="1_m2ofd"]
-[ext_resource type="Texture2D" uid="uid://bcqw88lb6b8i" path="res://assets/GUI/Button/Rect/Hover.png" id="2_plj1d"]
-[ext_resource type="FontFile" uid="uid://bsxp0dyq5i24b" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_4gmc3"]
+[ext_resource type="Texture2D" uid="uid://cfme1tsofltbb" path="res://assets/GUI/Button/Rect/Default.png" id="1_m2ofd"]
+[ext_resource type="Texture2D" uid="uid://7225gkoiuayj" path="res://assets/GUI/Button/Rect/Hover.png" id="2_plj1d"]
+[ext_resource type="FontFile" uid="uid://eh1nc54sujt3" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_4gmc3"]
 [ext_resource type="Script" path="res://scripts/rect_button.gd" id="3_yl22n"]
 
 [node name="RectButton" type="TextureButton"]

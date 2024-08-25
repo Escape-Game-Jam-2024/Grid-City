@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cf5vafbqeobye"]
+[gd_scene load_steps=9 format=3 uid="uid://dhs6w8ebg4wrj"]
 
 [ext_resource type="Texture2D" uid="uid://cft5yxsftbo64" path="res://assets/GUI/Panels/msg_regular.tres" id="1_frmoi"]
 [ext_resource type="Script" path="res://scripts/dialog_box.gd" id="1_hembq"]
 [ext_resource type="Material" uid="uid://bvj114mfwpn1k" path="res://assets/material/blur.tres" id="1_v8rfq"]
-[ext_resource type="FontFile" uid="uid://bsxp0dyq5i24b" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_emehd"]
+[ext_resource type="FontFile" uid="uid://eh1nc54sujt3" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="2_emehd"]
 [ext_resource type="PackedScene" uid="uid://clsjlrtnife1o" path="res://scenes/rect_button.tscn" id="3_gmew0"]
 
 [sub_resource type="Animation" id="Animation_a8r3r"]
