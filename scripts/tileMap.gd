@@ -4,7 +4,7 @@ extends TileMap
 @onready var gameSound: AudioStreamPlayer2D = $GameSound
 
 var fill_grid_size = Vector2i(256, 256)
-var grid_size = Vector2i(80, 64)
+var grid_size: Vector2i
 
 enum Layers {
 	GROUND,
@@ -12,6 +12,9 @@ enum Layers {
 	ROAD,
 	PAVEMENT,
 	HOUSE,
+	Station,
+	Poles,
+	Wires
 }
 
 var city_layout: Array
@@ -20,15 +23,24 @@ var house_factor: int = 30
 
 func _ready():
 	if gameSound != null:
-		gameSound.play()
+		pass
+		#gameSound.play()
 	GameManager.tilemap = self;
+	
+	grid_size = GameManager.grid_size
+	
 	city_layout = fill_grid_with_zeros()
+	
+	# TODO: add power station to map
+	city_layout[2][6] = Layers.Station
+	# city_layout[0][0] = Layers.Wires
+	
+	#self.set_cell(Layers.Wires, Vector2i(2, 5), 1, Vector2i(0, 1)) 
 	
 	generate_city_layout() 
 	build_city()
 
 func build_city():
-	
 	for x in range(fill_grid_size.x):
 		for y in range(fill_grid_size.y):
 			if city_layout[x][y] == Layers.GRASS:
@@ -48,11 +60,13 @@ func build_city():
 					Vector2(1, -1), Vector2(1, 0), Vector2(1, 1)      # Bottom-left, bottom, bottom-right
 				]
 				
-				if !isAdjacentCellsFilled(x, y, directions, Layers.ROAD):
+				if !GameManager.isAdjacentCellsFilled(x, y, directions, Layers.ROAD, city_layout) and (x > 10 and y > 12):
 					self.set_cell(Layers.HOUSE, Vector2i(x, y),0, Vector2i(18, 11))
-					#self.set_cell(Layers.HOUSE, Vector2i(x, y), 0, Vector2i(31, 8))
 				else:
 					self.set_cell(Layers.GRASS, Vector2i(x, y), 0, Vector2i(5, 51)) 
+			elif city_layout[x][y] == Layers.Station:
+				
+				self.set_cell(Layers.Station, Vector2i(x, y),0, Vector2i(17, 2))
 			else:
 				self.set_cell(Layers.GROUND, Vector2i(x, y),0, Vector2i(16, 50))
 
@@ -139,21 +153,8 @@ func isNextToHouse(x, y) -> bool:
 		Vector2(2, -2), Vector2(2, 1), Vector2(2, 2)      # Bottom-left, bottom, bottom-right
 	]
 
-	return isAdjacentCellsFilled(x, y, directions, Layers.HOUSE) or city_layout[x][y] == Layers.GROUND
+	return GameManager.isAdjacentCellsFilled(x, y, directions, Layers.HOUSE, city_layout)
 
-func isAdjacentCellsFilled(x, y, directions, layer) -> bool:
-	
-	for dir in directions:
-		var neighbor_x = x + dir.x
-		var neighbor_y = y + dir.y
-		
-		# Check if the new position is within the grid bounds
-		if (neighbor_x >= 0 and neighbor_x < grid_size.x) and (neighbor_y >= 0 and neighbor_y < grid_size.y):
-			var city_point = city_layout[neighbor_x][neighbor_y] 
-			if  city_point >= layer:
-				return true
-		
-	return false
 
 func fill_grid_with_zeros():
 	var grid = [] 
