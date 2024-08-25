@@ -30,7 +30,7 @@ var is_play_click: bool = false
 var is_first_play: bool = true
 var level_stars: Array[int] = [0]
 
-var grid_size = Vector2i(118, 64)
+var grid_size = Vector2i(121, 69)
 
 var directions = [
 	Vector2(-2, -2), Vector2(-2, 1), Vector2(-2, 2),  # Top-left, top, top-right

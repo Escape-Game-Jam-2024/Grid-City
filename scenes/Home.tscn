@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxe52q6vw4br8"]
 
 [ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_4mw74"]
-[ext_resource type="FontFile" uid="uid://6x58ijynoqny" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
+[ext_resource type="FontFile" uid="uid://dt470k3ssat0v" path="res://assets/fonts/GlitchGoblin_Font_1_1/GlitchGoblin.ttf" id="2_faq7t"]
 [ext_resource type="PackedScene" uid="uid://clsjlrtnife1o" path="res://scenes/rect_button.tscn" id="3_tx5re"]
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="4_l0k85"]
-[ext_resource type="AudioStream" uid="uid://crfdrhrm4ar2v" path="res://assets/audio/effects/vs-button-click-03.mp3" id="5_bkcsa"]
-[ext_resource type="AudioStream" uid="uid://saurcdu34de3" path="res://assets/audio/background/home_screen_sound.mp3" id="6_4s6pm"]
+[ext_resource type="AudioStream" uid="uid://du2yleve5lmed" path="res://assets/audio/effects/vs-button-click-03.mp3" id="5_bkcsa"]
+[ext_resource type="AudioStream" uid="uid://djwq8ba0r01lf" path="res://assets/audio/background/home_screen_sound.mp3" id="6_4s6pm"]
 
 [sub_resource type="GDScript" id="GDScript_rv6uy"]
 script/source = "extends AudioStreamPlayer2D

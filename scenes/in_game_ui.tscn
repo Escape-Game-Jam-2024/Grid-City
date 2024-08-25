@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bheakgcv4xagd" path="res://scenes/square_button.tscn" id="1_3lgix"]
 [ext_resource type="Script" path="res://scripts/in_game_ui.gd" id="1_cwecn"]
 [ext_resource type="PackedScene" uid="uid://c6hni3b7plbif" path="res://scenes/pause_scene.tscn" id="3_gqwsv"]
-[ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_q475d"]
+[ext_resource type="FontFile" uid="uid://bsxp0dyq5i24b" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_q475d"]
 [ext_resource type="PackedScene" uid="uid://b4li84n8vv6o8" path="res://scenes/LevelMenu/pole_picker.tscn" id="4_clbbc"]
 [ext_resource type="PackedScene" uid="uid://dhs6w8ebg4wrj" path="res://scenes/dialog_box.tscn" id="4_qyeie"]
 
@@ -11,6 +11,7 @@
 follow_viewport_enabled = true
 script = ExtResource("1_cwecn")
 level_num = 1
+number_of_poles = 20
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
@@ -102,7 +103,6 @@ theme_override_constants/separation = 1720
 
 [node name="PolePicker" parent="Menu/Bottom/HBoxContainer" instance=ExtResource("4_clbbc")]
 layout_mode = 2
-poles = 0
 
 [node name="HelpButton" parent="Menu/Bottom/HBoxContainer" instance=ExtResource("1_3lgix")]
 layout_mode = 2
@@ -123,7 +123,6 @@ dialog_box_size = Vector2(1200, 500)
 process_mode = 3
 dialog_text = "Are you sure you want to exit? All progress will be lost."
 dialog_box_size = Vector2(700, 400)
-unpause_after_close = null
 
 [node name="Timer" type="Timer" parent="."]
 

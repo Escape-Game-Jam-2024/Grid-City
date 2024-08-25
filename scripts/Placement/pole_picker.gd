@@ -28,7 +28,6 @@ func _on_pole_placed():
 		return
 	
 	var layout = GameManager.cityLayout
-	var prev_pos: Vector2i = GameManager.prev_pole_position
 	var pos: Vector2i = GameManager.pole_position
 
 	var wire_pos = Vector2i(GameManager.pole_position.x, GameManager.pole_position.y + 1)

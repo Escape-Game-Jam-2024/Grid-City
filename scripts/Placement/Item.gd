@@ -57,7 +57,6 @@ func _unhandled_input(event):
 			area_2d.monitoring = false
 			
 			GameManager.cityLayout[pole_pos.x][pole_pos.y + 1] = GameManager.Layers.Poles
-			GameManager.prev_pole_position = pole_pos
 			GameManager.item_placed.emit()
 		
 		ok.hide()
