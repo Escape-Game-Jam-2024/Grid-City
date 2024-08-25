@@ -22,6 +22,9 @@ signal secondary_button_clicked
 @export var dialog_box_size: Vector2:
 	set(new_value):
 		dialog_box_size = new_value
+@export var unpause_after_close = true:
+	set(new_value):
+		unpause_after_close = new_value
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var nine_patch_rect: NinePatchRect = $NinePatchRect
@@ -53,7 +56,8 @@ func _on_visibility_changed():
 		if show_blur:
 			animation_player.play('start_pause')
 	else:
-		get_tree().paused = false
+		if unpause_after_close:
+			get_tree().paused = false
 
 func _on_primary_button_clicked():
 	primary_button_clicked.emit()

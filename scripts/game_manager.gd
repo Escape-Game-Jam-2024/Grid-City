@@ -25,6 +25,7 @@ var cityLayout: Array
 var can_place_poles: bool = true
 var is_level_select: bool = false
 var is_play_click: bool = false
+var is_first_play: bool = true
 
 func _ready():
 	item_selected.connect(self.item_select)

@@ -9,6 +9,7 @@ signal clicked
 
 @onready var margin_container: MarginContainer = $MarginContainer
 @onready var text_label: RichTextLabel = $MarginContainer/RichTextLabel
+@onready var clickSound: AudioStreamPlayer2D = $ClickSound
 
 const min_size: Vector2 = Vector2(160, 85)
 
@@ -26,6 +27,7 @@ func _process(_delta):
 		size.x = margin_container.size.x
 
 func _on_button_pressed():
+	clickSound.play()
 	scale = Vector2(0.97, 0.97)
 
 func _on_button_released():

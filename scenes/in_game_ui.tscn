@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c6hni3b7plbif" path="res://scenes/pause_scene.tscn" id="3_gqwsv"]
 [ext_resource type="FontFile" uid="uid://d3n5y3oecltvb" path="res://assets/fonts/rubik/Rubik-Black.ttf" id="3_q475d"]
 [ext_resource type="PackedScene" uid="uid://b4li84n8vv6o8" path="res://scenes/LevelMenu/pole_picker.tscn" id="4_clbbc"]
-[ext_resource type="PackedScene" uid="uid://bbgcre5xiw6yy" path="res://scenes/dialog_box.tscn" id="4_qyeie"]
+[ext_resource type="PackedScene" uid="uid://dhs6w8ebg4wrj" path="res://scenes/dialog_box.tscn" id="4_qyeie"]
 
 [node name="InGameUI" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -61,7 +61,7 @@ theme_override_constants/separation = 1400
 
 [node name="BackButton" parent="Menu/Top/HBoxContainer" instance=ExtResource("1_3lgix")]
 layout_mode = 2
-texture_file = "res://assets/GUI/Button/Icon/ArrowLeft-Thin.png"
+texture_file = "res://assets/gui/Button/Icon/ArrowLeft-Thin.png"
 
 [node name="Right" type="HBoxContainer" parent="Menu/Top/HBoxContainer"]
 layout_mode = 2
@@ -112,10 +112,19 @@ texture_file = "res://assets/GUI/Button/Icon/help_icon.png"
 process_mode = 3
 visible = false
 
+[node name="Tutorial" parent="." instance=ExtResource("4_qyeie")]
+process_mode = 3
+dialog_text = "Welcome to Grid City! In this strategy game, your goal is to connect power poles and light up all the houses in the city"
+primary_button_text = "Finish"
+secondary_button_text = ""
+dialog_box_size = Vector2(1200, 500)
+
 [node name="DialogBox" parent="." instance=ExtResource("4_qyeie")]
 process_mode = 3
+visible = false
 dialog_text = "Are you sure you want to exit? All progress will be lost."
 dialog_box_size = Vector2(700, 400)
+unpause_after_close = null
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -125,6 +134,8 @@ dialog_box_size = Vector2(700, 400)
 [connection signal="level_selector" from="PauseScene" to="." method="go_to_level_selector"]
 [connection signal="play" from="PauseScene" to="." method="_on_pause_scene_play"]
 [connection signal="restart" from="PauseScene" to="." method="_on_pause_scene_restart"]
+[connection signal="primary_button_clicked" from="Tutorial" to="." method="_on_tutorial_primary_button_clicked"]
+[connection signal="secondary_button_clicked" from="Tutorial" to="." method="_on_tutorial_secondary_button_clicked"]
 [connection signal="primary_button_clicked" from="DialogBox" to="." method="_on_dialog_box_primary_button_clicked"]
 [connection signal="secondary_button_clicked" from="DialogBox" to="." method="_on_dialog_box_secondary_button_clicked"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
