@@ -1,15 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://csk0rru3l646r"]
+[gd_scene load_steps=3 format=3 uid="uid://csk0rru3l646r"]
 
 [ext_resource type="Script" path="res://scripts/Placement/Item.gd" id="1_8qbl5"]
-[ext_resource type="Texture2D" uid="uid://bld7d28xuk4i" path="res://assets/sprites/pole.png" id="1_hcs1q"]
-[ext_resource type="AudioStream" uid="uid://vju503y53cs4" path="res://assets/audio/effects/pop_effect.wav" id="3_h2q6k"]
-[ext_resource type="AudioStream" uid="uid://uk5loxxd0dh0" path="res://assets/audio/effects/pole_complete.wav" id="4_plbm4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbsjl"]
 size = Vector2(13, 31)
 
 [node name="Item" type="Sprite2D"]
-texture = ExtResource("1_hcs1q")
 centered = false
 script = ExtResource("1_8qbl5")
 
@@ -38,9 +34,7 @@ offset_bottom = 19.0
 color = Color(0.942284, 0.362849, 0.279066, 1)
 
 [node name="PoleSoundPlay" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_h2q6k")
 
 [node name="PoleConstruction" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_plbm4")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -6,6 +6,9 @@ enum Layers {
 	ROAD,
 	PAVEMENT,
 	HOUSE,
+	Station,
+	Wires,
+	Poles,
 }
 
 signal item_selected
@@ -26,6 +29,17 @@ var is_level_select: bool = false
 var is_play_click: bool = false
 var is_first_play: bool = true
 var level_stars: Array[int] = [0]
+
+var grid_size = Vector2i(118, 64)
+
+var directions = [
+	Vector2(-2, -2), Vector2(-2, 1), Vector2(-2, 2),  # Top-left, top, top-right
+	Vector2(1, -2),                   Vector2(1, 2),  # Left,      right
+	Vector2(2, -2), Vector2(2, 1), Vector2(2, 2)      # Bottom-left, bottom, bottom-right
+]
+
+var pole_position: Vector2i
+var prev_pole_position: Vector2i
 
 func _ready():
 	item_selected.connect(self.item_select)
@@ -70,3 +84,18 @@ func commit_level_results(level: int, level_finished: bool, time_elasped: float,
 		current_level += 1
 	
 	last_level_played = level
+
+func isAdjacentCellsFilled(x, y, directions, layer, layout, grid_size = grid_size) -> bool:
+	
+	for dir in directions:
+		var neighbor_x = x + dir.x
+		var neighbor_y = y + dir.y
+		
+		# Check if the new position is within the grid bounds
+		if (neighbor_x >= 0 and neighbor_x < grid_size.x) and (neighbor_y >= 0 and neighbor_y < grid_size.y):
+			var city_point = layout[neighbor_x][neighbor_y] 
+			if  city_point >= layer:
+				print('found: ', city_point)
+				return true
+		
+	return false

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_4fmqg"]
 [ext_resource type="PackedScene" uid="uid://biebd6rq0xdie" path="res://scenes/tileMap.tscn" id="1_is0n4"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="1_kun8t"]
 [ext_resource type="PackedScene" uid="uid://i8imh00816ed" path="res://scenes/in_game_ui.tscn" id="2_ocjqq"]
 [ext_resource type="AudioStream" uid="uid://cw74oxa4ljc3o" path="res://assets/audio/background/grid_gameplay.wav" id="2_rp4d0"]
 
@@ -10,6 +11,7 @@ script = ExtResource("1_4fmqg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+script = ExtResource("1_kun8t")
 
 [node name="TileMap" parent="." instance=ExtResource("1_is0n4")]
 
