@@ -27,7 +27,7 @@ func _process(delta):
 
 func _unhandled_input(event):
 	# place item
-	if event is InputEventMouseButton && event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton && event.pressed && event.button_index == MOUSE_BUTTON_LEFT && GameManager.can_place_poles:
 		var arr = area_2d.get_overlapping_areas()
 		for obj in arr:
 			obj.get_parent().queue_free()
@@ -36,6 +36,8 @@ func _unhandled_input(event):
 			set_process(false)
 			set_process_unhandled_input(false)
 			area_2d.monitoring = false
+
+			GameManager.item_placed.emit()
 		
 		ok.hide()
 		deny.hide()
@@ -48,8 +50,6 @@ func _unhandled_input(event):
 		deny.hide()
 		GameManager.emit_signal("item_unselected",self)
 	
-	
-
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		GameManager.emit_signal("item_unselected",self)

@@ -41,6 +41,7 @@ func _on_gui_input(event):
 		return
 	if event is InputEventMouseButton and event.pressed:
 		level_selected.emit(level_num)
+		GameManager.level_selected.emit(level_num)
 		SceneLoader.load_scene("res://scenes/game_scene.tscn", true)
 
 func set_stars(value):

@@ -9,7 +9,6 @@ signal clicked
 
 @onready var texture_rect: TextureRect = $MarginContainer/TextureRect
 
-
 func _ready():
 	button_down.connect(_on_button_pressed)
 	button_up.connect(_on_button_released)
